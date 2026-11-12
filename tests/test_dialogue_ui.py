@@ -5,7 +5,8 @@ from pathlib import Path
 import sys
 import unittest
 
-from PIL import ImageChops
+import numpy as np
+from PIL import Image, ImageChops, ImageDraw
 
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / 'scripts'))
@@ -86,6 +87,43 @@ class DialogueUITests(unittest.TestCase):
     def test_paper_and_frames_are_deterministic(self):
         another = Renderer(self.data, self.folder, 1280)
         self.assertIsNone(ImageChops.difference(self.renderer.frame(12), another.frame(12)).getbbox())
+
+    def test_words_share_native_line_baseline_during_highlights(self):
+        # Compare separate words to Pillow's natural full-line typesetting.
+        # Mixed capitals, x-heights, descenders and punctuation expose top alignment.
+        d = copy.deepcopy(self.data)
+        cue = d['lines'][0]
+        cue['en'] = 'A young man paused. Does it protect the herb too?'
+        cue['zh'] = '青年停下脚步。它也护着灵草吗？'
+        cue.pop('vocab', None)
+        cue['words'] = [{'text': token, 'start': n*.1, 'end': (n+1)*.1}
+                        for n, token in enumerate(cue['en'].split())]
+        for width in (640, 1280, 1920):
+            r = Renderer(d, self.folder, width)
+            layout = r.ui.layouts[cue['id']]
+            font = r.f(layout['size'], 'serif')
+            reference = Image.new('RGB', r.size, 'white')
+            draw = ImageDraw.Draw(reference)
+            for y in sorted({word[2] for word in layout['words']}):
+                row = [word for word in layout['words'] if word[2] == y]
+                baseline = round(y*r.scale) - font.getbbox('H', anchor='ls')[1]
+                draw.text((round(row[0][1]*r.scale), baseline),
+                          ' '.join(word[0] for word in row), font=font, fill='black', anchor='ls')
+
+            def ink_rows(image, box):
+                pixels = np.asarray(image.crop(box))
+                # Both text colors are dark; paper, brush wash and gold are light.
+                occupied = np.flatnonzero((pixels.max(axis=2) < 100).any(axis=1))
+                self.assertGreater(len(occupied), 0)
+                return (occupied[0], occupied[-1])
+
+            for offset in [-.05] + [word['start']+.05 for word in cue['words']] + [1.2]:
+                frame = r.frame(cue['audio_start']+offset)
+                for token, x, y, w in layout['words']:
+                    box = (round((x-2)*r.scale), round((y-4)*r.scale),
+                           round((x+w+2)*r.scale), round((y+layout['size']+5)*r.scale))
+                    with self.subTest(width=width, time=offset, token=token):
+                        self.assertEqual(ink_rows(frame, box), ink_rows(reference, box))
 
 
 if __name__ == '__main__':

@@ -110,7 +110,12 @@ class JadePaperUI:
                 x += w + self.r.measure(' ', size, 'serif')
         chinese_y = max(615, self.TOP + len(rows) * size * 1.22 + 10)
         chinese = self.fit(cue['zh'], width, self.BOTTOM - chinese_y, 19, 16, 'zh', 2)
+        # Keep the designed cap-height top, but share one typographic baseline.
+        # A per-word 'lt' anchor aligns ink bounds: "young" then sits higher
+        # than "that". The fixed font metric is independent of token and highlight.
+        baseline_offset_px = -self.r.f(size, 'serif').getbbox('H', anchor='ls')[1]
         result = {'words': words, 'size': size, 'right': right,
+                  'baseline_offset_px': baseline_offset_px,
                   'chinese': chinese, 'chinese_y': chinese_y,
                   'underline': phrase_indices([w[0] for w in words], vocab['term']) if vocab else set()}
         if vocab:
@@ -241,7 +246,9 @@ class JadePaperUI:
                 top = [(x-5+j*(width+10)/12, y-2+math.sin(j*2.3)*1.7) for j in range(13)]
                 bottom = [(x-5+j*(width+10)/12, y+size+3+math.sin(j*2.7)*1.5) for j in reversed(range(13))]
                 d.polygon([self.point(p) for p in top+bottom], fill='#abc6b5')
-            self.text(d, (x,y), token, size, JADE if k == hit else INK)
+            d.text((round(x*self.s), round(y*self.s) + layout['baseline_offset_px']),
+                   token, font=self.r.f(size, 'serif'), fill=JADE if k == hit else INK,
+                   anchor='ls')
             if k in layout['underline']:
                 self.line(d, [(x,y+size+4),(x+width,y+size+4)], GOLD, 1.3)
         if chinese:
