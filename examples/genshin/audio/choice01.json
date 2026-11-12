@@ -1,0 +1,44 @@
+{
+  "hash": "876cdaa9b3f18b1f76eaab7df7fd263b866c2883268ee4b002a0d3e0d7ae49c2",
+  "duration": 2.952,
+  "words": [
+    {
+      "text": "Which",
+      "start": 0.143083,
+      "end": 0.462249
+    },
+    {
+      "text": "clue",
+      "start": 0.475541,
+      "end": 0.781374
+    },
+    {
+      "text": "made",
+      "start": 0.794666,
+      "end": 1.060624
+    },
+    {
+      "text": "the",
+      "start": 1.073916,
+      "end": 1.166999
+    },
+    {
+      "text": "lantern",
+      "start": 1.180333,
+      "end": 1.725541
+    },
+    {
+      "text": "unusual",
+      "start": 1.738833,
+      "end": 2.549999
+    }
+  ],
+  "config": {
+    "text": "Which clue made the lantern unusual?",
+    "voice": "en-GB-SoniaNeural",
+    "rate": "-6%",
+    "pitch": "+0Hz",
+    "provider": "edge-tts-7.3.1"
+  },
+  "file": "audio/choice01.mp3"
+}

@@ -1,0 +1,59 @@
+{
+  "hash": "0660004d1a9d17080fad33fc848abc60ae69addaf8a6a8d75f2bf2fbcb7e33b4",
+  "duration": 4.2,
+  "words": [
+    {
+      "text": "A",
+      "start": 0.102083,
+      "end": 0.232291
+    },
+    {
+      "text": "song",
+      "start": 0.245333,
+      "end": 0.701083
+    },
+    {
+      "text": "I",
+      "start": 1.601583,
+      "end": 1.757833
+    },
+    {
+      "text": "thought",
+      "start": 1.770833,
+      "end": 2.031249
+    },
+    {
+      "text": "we",
+      "start": 2.044291,
+      "end": 2.148457
+    },
+    {
+      "text": "were",
+      "start": 2.161458,
+      "end": 2.278666
+    },
+    {
+      "text": "looking",
+      "start": 2.291666,
+      "end": 2.617207
+    },
+    {
+      "text": "for",
+      "start": 2.630208,
+      "end": 2.747416
+    },
+    {
+      "text": "treasure",
+      "start": 2.760416,
+      "end": 3.294291
+    }
+  ],
+  "config": {
+    "text": "A song? I thought we were looking for treasure.",
+    "voice": "en-US-AriaNeural",
+    "rate": "-4%",
+    "pitch": "+0Hz",
+    "provider": "edge-tts-7.3.1"
+  },
+  "file": "audio/s11.mp3"
+}

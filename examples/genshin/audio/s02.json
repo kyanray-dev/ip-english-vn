@@ -1,0 +1,54 @@
+{
+  "hash": "ad1739295a223adce684ca50b252bf2eeb305c4dbab9ca1e00bbd699057cd1cd",
+  "duration": 4.752,
+  "words": [
+    {
+      "text": "Wait",
+      "start": 0.102083,
+      "end": 0.688041
+    },
+    {
+      "text": "That",
+      "start": 1.575541,
+      "end": 1.861999
+    },
+    {
+      "text": "lantern",
+      "start": 1.875,
+      "end": 2.33075
+    },
+    {
+      "text": "is",
+      "start": 2.34375,
+      "end": 2.460958
+    },
+    {
+      "text": "moving",
+      "start": 2.473958,
+      "end": 2.825541
+    },
+    {
+      "text": "against",
+      "start": 2.838541,
+      "end": 3.242207
+    },
+    {
+      "text": "the",
+      "start": 3.255208,
+      "end": 3.359374
+    },
+    {
+      "text": "wind",
+      "start": 3.372416,
+      "end": 3.854207
+    }
+  ],
+  "config": {
+    "text": "Wait. That lantern is moving against the wind.",
+    "voice": "en-US-AriaNeural",
+    "rate": "-4%",
+    "pitch": "+0Hz",
+    "provider": "edge-tts-7.3.1"
+  },
+  "file": "audio/s02.mp3"
+}

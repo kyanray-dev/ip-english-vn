@@ -1,0 +1,39 @@
+{
+  "hash": "9c0549cd5cf28940ec094ef1b29fba804ff447eed3955f6122de04c79d2ffe1f",
+  "duration": 2.208,
+  "words": [
+    {
+      "text": "Should",
+      "start": 0.104958,
+      "end": 0.379666
+    },
+    {
+      "text": "we",
+      "start": 0.393416,
+      "end": 0.517041
+    },
+    {
+      "text": "let",
+      "start": 0.53075,
+      "end": 0.723041
+    },
+    {
+      "text": "it",
+      "start": 0.736833,
+      "end": 0.819249
+    },
+    {
+      "text": "go",
+      "start": 0.832958,
+      "end": 1.245041
+    }
+  ],
+  "config": {
+    "text": "Should we let it go?",
+    "voice": "en-US-AriaNeural",
+    "rate": "-9%",
+    "pitch": "+0Hz",
+    "provider": "edge-tts-7.3.1"
+  },
+  "file": "audio/s18.mp3"
+}

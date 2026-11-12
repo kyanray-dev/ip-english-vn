@@ -1,0 +1,69 @@
+{
+  "hash": "a7d1d53e47b0366114652c17ce58f2558ea1af630d09ca8a9bbb60c75c4c70cb",
+  "duration": 5.208,
+  "words": [
+    {
+      "text": "She",
+      "start": 0.129791,
+      "end": 0.395749
+    },
+    {
+      "text": "opened",
+      "start": 0.409041,
+      "end": 0.794666
+    },
+    {
+      "text": "her",
+      "start": 0.807958,
+      "end": 0.940916
+    },
+    {
+      "text": "hands",
+      "start": 0.95425,
+      "end": 1.632458
+    },
+    {
+      "text": "This",
+      "start": 2.061166,
+      "end": 2.327124
+    },
+    {
+      "text": "time",
+      "start": 2.340416,
+      "end": 2.819124
+    },
+    {
+      "text": "the",
+      "start": 3.098416,
+      "end": 3.191499
+    },
+    {
+      "text": "lantern",
+      "start": 3.204791,
+      "end": 3.763291
+    },
+    {
+      "text": "followed",
+      "start": 3.776583,
+      "end": 4.188833
+    },
+    {
+      "text": "the",
+      "start": 4.202125,
+      "end": 4.295208
+    },
+    {
+      "text": "wind",
+      "start": 4.3085,
+      "end": 4.813833
+    }
+  ],
+  "config": {
+    "text": "She opened her hands. This time, the lantern followed the wind.",
+    "voice": "en-GB-SoniaNeural",
+    "rate": "-6%",
+    "pitch": "+0Hz",
+    "provider": "edge-tts-7.3.1"
+  },
+  "file": "audio/s20.mp3"
+}

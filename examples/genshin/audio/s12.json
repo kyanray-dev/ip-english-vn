@@ -1,0 +1,54 @@
+{
+  "hash": "cc5fa5e3186278f909b9d0eb9b66073a330785fb0b9725d6d2eec87a08291b23",
+  "duration": 4.44,
+  "words": [
+    {
+      "text": "That",
+      "start": 0.1,
+      "end": 0.336833
+    },
+    {
+      "text": "depends",
+      "start": 0.35,
+      "end": 1.021041
+    },
+    {
+      "text": "What",
+      "start": 1.931583,
+      "end": 2.168416
+    },
+    {
+      "text": "counts",
+      "start": 2.181583,
+      "end": 2.497374
+    },
+    {
+      "text": "as",
+      "start": 2.510541,
+      "end": 2.628957
+    },
+    {
+      "text": "treasure",
+      "start": 2.642125,
+      "end": 2.997375
+    },
+    {
+      "text": "to",
+      "start": 3.010541,
+      "end": 3.181582
+    },
+    {
+      "text": "you",
+      "start": 3.19475,
+      "end": 3.523708
+    }
+  ],
+  "config": {
+    "text": "That depends. What counts as treasure to you?",
+    "voice": "en-GB-RyanNeural",
+    "rate": "-5%",
+    "pitch": "+7Hz",
+    "provider": "edge-tts-7.3.1"
+  },
+  "file": "audio/s12.mp3"
+}

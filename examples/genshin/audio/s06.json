@@ -1,0 +1,54 @@
+{
+  "hash": "0e345ec5d31264a8dff52077a71acddcc10b4348778ef856de05e769946d028e",
+  "duration": 3.504,
+  "words": [
+    {
+      "text": "A",
+      "start": 0.143083,
+      "end": 0.222874
+    },
+    {
+      "text": "faint",
+      "start": 0.236166,
+      "end": 0.661707
+    },
+    {
+      "text": "melody",
+      "start": 0.675,
+      "end": 1.206916
+    },
+    {
+      "text": "drifted",
+      "start": 1.220208,
+      "end": 1.791999
+    },
+    {
+      "text": "from",
+      "start": 1.805333,
+      "end": 1.991499
+    },
+    {
+      "text": "the",
+      "start": 2.004791,
+      "end": 2.097874
+    },
+    {
+      "text": "paper",
+      "start": 2.111166,
+      "end": 2.456916
+    },
+    {
+      "text": "lantern",
+      "start": 2.470208,
+      "end": 3.095208
+    }
+  ],
+  "config": {
+    "text": "A faint melody drifted from the paper lantern.",
+    "voice": "en-GB-SoniaNeural",
+    "rate": "-6%",
+    "pitch": "+0Hz",
+    "provider": "edge-tts-7.3.1"
+  },
+  "file": "audio/s06.mp3"
+}

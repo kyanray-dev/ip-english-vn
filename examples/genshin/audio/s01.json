@@ -1,0 +1,69 @@
+{
+  "hash": "f77a947a18b0c0ce2fcd904ebf77a4d862ffe50bd8511c4bd6da252deaa8e047",
+  "duration": 4.536,
+  "words": [
+    {
+      "text": "At",
+      "start": 0.143083,
+      "end": 0.342541
+    },
+    {
+      "text": "dusk",
+      "start": 0.355833,
+      "end": 0.861166
+    },
+    {
+      "text": "the",
+      "start": 1.140416,
+      "end": 1.246791
+    },
+    {
+      "text": "Traveler",
+      "start": 1.260125,
+      "end": 1.71225
+    },
+    {
+      "text": "found",
+      "start": 1.725541,
+      "end": 2.031374
+    },
+    {
+      "text": "a",
+      "start": 2.044666,
+      "end": 2.084541
+    },
+    {
+      "text": "lantern",
+      "start": 2.097875,
+      "end": 2.669666
+    },
+    {
+      "text": "floating",
+      "start": 2.682958,
+      "end": 3.161666
+    },
+    {
+      "text": "above",
+      "start": 3.175,
+      "end": 3.480833
+    },
+    {
+      "text": "the",
+      "start": 3.494166,
+      "end": 3.600541
+    },
+    {
+      "text": "bridge",
+      "start": 3.613833,
+      "end": 4.132458
+    }
+  ],
+  "config": {
+    "text": "At dusk, the Traveler found a lantern floating above the bridge.",
+    "voice": "en-GB-SoniaNeural",
+    "rate": "-6%",
+    "pitch": "+0Hz",
+    "provider": "edge-tts-7.3.1"
+  },
+  "file": "audio/s01.mp3"
+}

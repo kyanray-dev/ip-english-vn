@@ -1,0 +1,54 @@
+{
+  "hash": "8393c8bf95e1fe98b973c3144ac4f31cdfdcf97b743b0bd7bba47b62e79944f7",
+  "duration": 4.512,
+  "words": [
+    {
+      "text": "Only",
+      "start": 0.1,
+      "end": 0.442125
+    },
+    {
+      "text": "that",
+      "start": 0.45525,
+      "end": 0.639458
+    },
+    {
+      "text": "the",
+      "start": 0.652625,
+      "end": 0.718416
+    },
+    {
+      "text": "wind",
+      "start": 0.731583,
+      "end": 1.060541
+    },
+    {
+      "text": "isn't",
+      "start": 1.073666,
+      "end": 1.297332
+    },
+    {
+      "text": "carrying",
+      "start": 1.310541,
+      "end": 1.810541
+    },
+    {
+      "text": "it",
+      "start": 1.823666,
+      "end": 2.086832
+    },
+    {
+      "text": "Listen",
+      "start": 2.997375,
+      "end": 3.5895
+    }
+  ],
+  "config": {
+    "text": "Only that the wind isn't carrying it. Listen.",
+    "voice": "en-GB-RyanNeural",
+    "rate": "-5%",
+    "pitch": "+7Hz",
+    "provider": "edge-tts-7.3.1"
+  },
+  "file": "audio/s05.mp3"
+}

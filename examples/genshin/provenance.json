@@ -1,0 +1,45 @@
+{
+  "created_date": "2026-11-12",
+  "work": "The Lantern Against the Wind / 逆风的灯笼",
+  "story": "New original Genshin Impact fan fiction written for this task. Not official story dialogue or a translation of the referenced novel.",
+  "format_references": [
+    {
+      "url": "https://www.bilibili.com/video/BV1YusZ6UEGx/",
+      "observed": "Public page metadata, description and first frame only"
+    },
+    {
+      "url": "https://www.bilibili.com/video/BV1qZWU6cEz1/",
+      "observed": "Public page metadata, description and first frame only"
+    }
+  ],
+  "art": [
+    {
+      "file": "assets/background.png",
+      "provider": "image_gen",
+      "brief": "Cinematic 16:9 hand-painted anime visual novel background. Mondstadt-inspired medieval stone bridge, reflective canal, warm lanterns, windmills and cathedral at blue-hour dusk. Navy, jade, gold. No people, text or UI.",
+      "generation_reference": "exec-a93df9a8-2fef-4563-bb61-6af8e4e55aaf.png"
+    },
+    {
+      "file": "assets/venti.png",
+      "provider": "image_gen",
+      "brief": "Transparent original fan illustration of Venti, black hair with teal braids, green beret and cape, white blouse, lyre, playful smile, slightly facing viewer's right. Detailed 2D anime, teal rim lighting, uncropped head and arms.",
+      "generation_reference": "exec-8dd8fb49-c020-41a1-ae92-e8f9540f96c9.png"
+    },
+    {
+      "file": "assets/lumine.png",
+      "provider": "image_gen",
+      "brief": "Transparent original fan illustration of Lumine, blonde hair, amber eyes, white flowers and white-blue-gold dress, thoughtful expression, slightly facing viewer's left. Detailed 2D anime, teal rim lighting, uncropped head and arms.",
+      "generation_reference": "exec-5f096c8a-79c2-46ff-a040-b4e9a1e78f04.png"
+    }
+  ],
+  "voices": {
+    "narrator": "en-GB-SoniaNeural",
+    "lumine": "en-US-AriaNeural",
+    "venti": "en-GB-RyanNeural",
+    "provider": "edge-tts 7.3.1",
+    "note": "Stock synthetic voices. No official voice actor cloning."
+  },
+  "music": "Quiet locally synthesized ambience and three generated notes. No external soundtrack.",
+  "fonts": "DejaVu Sans, DejaVu Serif, Noto Sans CJK; license files bundled in fonts/",
+  "rights_note": "Genshin Impact characters and setting belong to their respective rights holders. Unofficial fan learning sample. Reference videos and original novel text are not redistributed."
+}

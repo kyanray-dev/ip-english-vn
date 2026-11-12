@@ -1,0 +1,69 @@
+{
+  "hash": "8b7707f7854031709e7679a0d20ae3eba7a3d49c3827536d0924ea61610c9662",
+  "duration": 4.608,
+  "words": [
+    {
+      "text": "When",
+      "start": 0.104958,
+      "end": 0.297249
+    },
+    {
+      "text": "the",
+      "start": 0.311,
+      "end": 0.407166
+    },
+    {
+      "text": "city",
+      "start": 0.420875,
+      "end": 0.709333
+    },
+    {
+      "text": "falls",
+      "start": 0.723083,
+      "end": 1.066499
+    },
+    {
+      "text": "silent",
+      "start": 1.080208,
+      "end": 1.629666
+    },
+    {
+      "text": "return",
+      "start": 1.849458,
+      "end": 2.261541
+    },
+    {
+      "text": "my",
+      "start": 2.275291,
+      "end": 2.453874
+    },
+    {
+      "text": "song",
+      "start": 2.467583,
+      "end": 2.824708
+    },
+    {
+      "text": "to",
+      "start": 2.838458,
+      "end": 2.920874
+    },
+    {
+      "text": "the",
+      "start": 2.934625,
+      "end": 3.05825
+    },
+    {
+      "text": "sky",
+      "start": 3.071958,
+      "end": 3.635124
+    }
+  ],
+  "config": {
+    "text": "When the city falls silent, return my song to the sky.",
+    "voice": "en-US-AriaNeural",
+    "rate": "-9%",
+    "pitch": "+0Hz",
+    "provider": "edge-tts-7.3.1"
+  },
+  "file": "audio/s10.mp3"
+}

@@ -1,0 +1,54 @@
+{
+  "hash": "fab698c72a3aa6f7d95e81305f61347a2d1e576a858192eb1d147cbc7c4c4e20",
+  "duration": 4.368,
+  "words": [
+    {
+      "text": "This",
+      "start": 0.1,
+      "end": 0.376333
+    },
+    {
+      "text": "tune",
+      "start": 0.389458,
+      "end": 0.876291
+    },
+    {
+      "text": "I",
+      "start": 1.786833,
+      "end": 1.944708
+    },
+    {
+      "text": "heard",
+      "start": 1.957875,
+      "end": 2.234208
+    },
+    {
+      "text": "it",
+      "start": 2.247375,
+      "end": 2.3395
+    },
+    {
+      "text": "here",
+      "start": 2.352625,
+      "end": 2.681583
+    },
+    {
+      "text": "years",
+      "start": 2.8,
+      "end": 3.036833
+    },
+    {
+      "text": "ago",
+      "start": 3.05,
+      "end": 3.44475
+    }
+  ],
+  "config": {
+    "text": "This tune... I heard it here, years ago.",
+    "voice": "en-GB-RyanNeural",
+    "rate": "-5%",
+    "pitch": "+7Hz",
+    "provider": "edge-tts-7.3.1"
+  },
+  "file": "audio/s14.mp3"
+}

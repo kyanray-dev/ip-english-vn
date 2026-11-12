@@ -1,0 +1,54 @@
+{
+  "hash": "c6098c8a302465908831789e58915bcabc19ff3e70dad7fd82a693cbb1d94f60",
+  "duration": 4.272,
+  "words": [
+    {
+      "text": "Against",
+      "start": 0.143083,
+      "end": 0.635124
+    },
+    {
+      "text": "the",
+      "start": 0.648416,
+      "end": 0.741499
+    },
+    {
+      "text": "wind",
+      "start": 0.754791,
+      "end": 1.313291
+    },
+    {
+      "text": "Something",
+      "start": 1.715416,
+      "end": 2.207457
+    },
+    {
+      "text": "inside",
+      "start": 2.22075,
+      "end": 2.84575
+    },
+    {
+      "text": "was",
+      "start": 2.859041,
+      "end": 3.031916
+    },
+    {
+      "text": "guiding",
+      "start": 3.045208,
+      "end": 3.497333
+    },
+    {
+      "text": "it",
+      "start": 3.510625,
+      "end": 3.882958
+    }
+  ],
+  "config": {
+    "text": "Against the wind. Something inside was guiding it.",
+    "voice": "en-GB-SoniaNeural",
+    "rate": "-6%",
+    "pitch": "+0Hz",
+    "provider": "edge-tts-7.3.1"
+  },
+  "file": "audio/s13.mp3"
+}

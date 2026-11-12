@@ -1,0 +1,59 @@
+{
+  "hash": "97d4852c057307bdf7d9a694875af3be6daebe29c376506ac670fc334721dfcf",
+  "duration": 4.464,
+  "words": [
+    {
+      "text": "No.",
+      "start": 0.1,
+      "end": 0.613166
+    },
+    {
+      "text": "But",
+      "start": 1.523666,
+      "end": 1.707874
+    },
+    {
+      "text": "perhaps",
+      "start": 1.721041,
+      "end": 2.128916
+    },
+    {
+      "text": "it",
+      "start": 2.142125,
+      "end": 2.247375
+    },
+    {
+      "text": "doesn't",
+      "start": 2.260541,
+      "end": 2.510541
+    },
+    {
+      "text": "need",
+      "start": 2.523666,
+      "end": 2.734207
+    },
+    {
+      "text": "the",
+      "start": 2.747375,
+      "end": 2.826333
+    },
+    {
+      "text": "same",
+      "start": 2.839458,
+      "end": 3.102624
+    },
+    {
+      "text": "ending",
+      "start": 3.115791,
+      "end": 3.536832
+    }
+  ],
+  "config": {
+    "text": "No. But perhaps it doesn't need the same ending.",
+    "voice": "en-GB-RyanNeural",
+    "rate": "-5%",
+    "pitch": "+7Hz",
+    "provider": "edge-tts-7.3.1"
+  },
+  "file": "audio/s16.mp3"
+}

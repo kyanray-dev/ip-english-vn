@@ -1,0 +1,59 @@
+{
+  "hash": "2da082ef24ec48a1f03125892ef7bc571c0fa60c07749a7f9d3ea76be702439a",
+  "duration": 4.176,
+  "words": [
+    {
+      "text": "Well",
+      "start": 0.1,
+      "end": 0.45
+    },
+    {
+      "text": "even",
+      "start": 0.6625,
+      "end": 0.9
+    },
+    {
+      "text": "lanterns",
+      "start": 0.9125,
+      "end": 1.35
+    },
+    {
+      "text": "get",
+      "start": 1.3625,
+      "end": 1.5875
+    },
+    {
+      "text": "tired",
+      "start": 1.6,
+      "end": 1.95
+    },
+    {
+      "text": "of",
+      "start": 1.9625,
+      "end": 2.0375
+    },
+    {
+      "text": "following",
+      "start": 2.05,
+      "end": 2.475
+    },
+    {
+      "text": "everyone",
+      "start": 2.4875,
+      "end": 2.875
+    },
+    {
+      "text": "else",
+      "start": 2.8875,
+      "end": 3.3125
+    }
+  ],
+  "config": {
+    "text": "Well, even lanterns get tired of following everyone else.",
+    "voice": "en-GB-RyanNeural",
+    "rate": "+0%",
+    "pitch": "+7Hz",
+    "provider": "edge-tts-7.3.1"
+  },
+  "file": "audio/s03.mp3"
+}

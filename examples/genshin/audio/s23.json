@@ -1,0 +1,64 @@
+{
+  "hash": "b2eec978ad5de0758c0a706006d7a5843e8644292447361714027073146bdb42",
+  "duration": 4.008,
+  "words": [
+    {
+      "text": "Before",
+      "start": 0.100791,
+      "end": 0.499707
+    },
+    {
+      "text": "she",
+      "start": 0.513041,
+      "end": 0.699207
+    },
+    {
+      "text": "could",
+      "start": 0.7125,
+      "end": 0.872083
+    },
+    {
+      "text": "answer",
+      "start": 0.885375,
+      "end": 1.404
+    },
+    {
+      "text": "the",
+      "start": 1.696541,
+      "end": 1.802916
+    },
+    {
+      "text": "bard",
+      "start": 1.816208,
+      "end": 2.148666
+    },
+    {
+      "text": "was",
+      "start": 2.161958,
+      "end": 2.334833
+    },
+    {
+      "text": "already",
+      "start": 2.348125,
+      "end": 2.680583
+    },
+    {
+      "text": "walking",
+      "start": 2.693875,
+      "end": 3.146
+    },
+    {
+      "text": "away",
+      "start": 3.159291,
+      "end": 3.611416
+    }
+  ],
+  "config": {
+    "text": "Before she could answer, the bard was already walking away.",
+    "voice": "en-GB-SoniaNeural",
+    "rate": "-6%",
+    "pitch": "+0Hz",
+    "provider": "edge-tts-7.3.1"
+  },
+  "file": "audio/s23.mp3"
+}

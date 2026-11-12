@@ -1,0 +1,64 @@
+{
+  "hash": "080aaee0f9b7fa99ee15c0beeaaab9f10767863286b71f825e310980d946eb3f",
+  "duration": 4.944,
+  "words": [
+    {
+      "text": "The",
+      "start": 0.143083,
+      "end": 0.249458
+    },
+    {
+      "text": "lantern",
+      "start": 0.26275,
+      "end": 0.847875
+    },
+    {
+      "text": "settled",
+      "start": 0.861166,
+      "end": 1.366499
+    },
+    {
+      "text": "into",
+      "start": 1.379791,
+      "end": 1.712249
+    },
+    {
+      "text": "her",
+      "start": 1.725541,
+      "end": 1.858499
+    },
+    {
+      "text": "hands",
+      "start": 1.871791,
+      "end": 2.536666
+    },
+    {
+      "text": "She",
+      "start": 2.952125,
+      "end": 3.1915
+    },
+    {
+      "text": "unfolded",
+      "start": 3.204791,
+      "end": 3.882999
+    },
+    {
+      "text": "the",
+      "start": 3.896291,
+      "end": 4.002666
+    },
+    {
+      "text": "note",
+      "start": 4.015958,
+      "end": 4.561166
+    }
+  ],
+  "config": {
+    "text": "The lantern settled into her hands. She unfolded the note.",
+    "voice": "en-GB-SoniaNeural",
+    "rate": "-6%",
+    "pitch": "+0Hz",
+    "provider": "edge-tts-7.3.1"
+  },
+  "file": "audio/s09.mp3"
+}

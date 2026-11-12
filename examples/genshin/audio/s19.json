@@ -1,0 +1,69 @@
+{
+  "hash": "483b3d388c99588da31bf11bf634e9eba91495a8e9cc1aa41a1ca0a270195f71",
+  "duration": 3.792,
+  "words": [
+    {
+      "text": "Some",
+      "start": 0.1,
+      "end": 0.415791
+    },
+    {
+      "text": "things",
+      "start": 0.428958,
+      "end": 0.678958
+    },
+    {
+      "text": "find",
+      "start": 0.692125,
+      "end": 0.981583
+    },
+    {
+      "text": "their",
+      "start": 0.99475,
+      "end": 1.086875
+    },
+    {
+      "text": "way",
+      "start": 1.1,
+      "end": 1.336833
+    },
+    {
+      "text": "home",
+      "start": 1.35,
+      "end": 1.678958
+    },
+    {
+      "text": "only",
+      "start": 1.692125,
+      "end": 1.955291
+    },
+    {
+      "text": "when",
+      "start": 1.968416,
+      "end": 2.152624
+    },
+    {
+      "text": "we",
+      "start": 2.165791,
+      "end": 2.271041
+    },
+    {
+      "text": "let",
+      "start": 2.284208,
+      "end": 2.507874
+    },
+    {
+      "text": "go",
+      "start": 2.521041,
+      "end": 2.863166
+    }
+  ],
+  "config": {
+    "text": "Some things find their way home only when we let go.",
+    "voice": "en-GB-RyanNeural",
+    "rate": "-5%",
+    "pitch": "+7Hz",
+    "provider": "edge-tts-7.3.1"
+  },
+  "file": "audio/s19.mp3"
+}

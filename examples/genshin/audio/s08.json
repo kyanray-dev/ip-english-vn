@@ -1,0 +1,64 @@
+{
+  "hash": "da8433893adcac2d0659f4e6c7e0b9f640bfd63a004b5d3e1f178d2b67af769f",
+  "duration": 4.44,
+  "words": [
+    {
+      "text": "For",
+      "start": 0.1,
+      "end": 0.2625
+    },
+    {
+      "text": "you",
+      "start": 0.275,
+      "end": 0.6375
+    },
+    {
+      "text": "I",
+      "start": 1.5,
+      "end": 1.65
+    },
+    {
+      "text": "suppose",
+      "start": 1.6625,
+      "end": 2.075
+    },
+    {
+      "text": "the",
+      "start": 2.0875,
+      "end": 2.1625
+    },
+    {
+      "text": "wind",
+      "start": 2.175,
+      "end": 2.4625
+    },
+    {
+      "text": "can",
+      "start": 2.475,
+      "end": 2.5875
+    },
+    {
+      "text": "make",
+      "start": 2.6,
+      "end": 2.8
+    },
+    {
+      "text": "an",
+      "start": 2.8125,
+      "end": 2.8875
+    },
+    {
+      "text": "exception",
+      "start": 2.9,
+      "end": 3.5625
+    }
+  ],
+  "config": {
+    "text": "For you? I suppose the wind can make an exception.",
+    "voice": "en-GB-RyanNeural",
+    "rate": "+0%",
+    "pitch": "+7Hz",
+    "provider": "edge-tts-7.3.1"
+  },
+  "file": "audio/s08.mp3"
+}

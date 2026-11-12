@@ -1,0 +1,39 @@
+{
+  "hash": "4c9583dc86179f0b10952b29a9970c62b2991d6435fb6a0caa4540cdbb0a3b15",
+  "duration": 3.576,
+  "words": [
+    {
+      "text": "Venti",
+      "start": 0.102083,
+      "end": 0.727083
+    },
+    {
+      "text": "Was",
+      "start": 1.627625,
+      "end": 1.835958
+    },
+    {
+      "text": "that",
+      "start": 1.848958,
+      "end": 2.044291
+    },
+    {
+      "text": "your",
+      "start": 2.057291,
+      "end": 2.200541
+    },
+    {
+      "text": "song",
+      "start": 2.213541,
+      "end": 2.669291
+    }
+  ],
+  "config": {
+    "text": "Venti? Was that your song?",
+    "voice": "en-US-AriaNeural",
+    "rate": "-4%",
+    "pitch": "+0Hz",
+    "provider": "edge-tts-7.3.1"
+  },
+  "file": "audio/s21.mp3"
+}

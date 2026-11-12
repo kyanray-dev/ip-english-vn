@@ -1,0 +1,54 @@
+{
+  "hash": "f76947123d16b708c7ab9394c720ab0a4a338dca6bbb9717ef2bf0605d7e2327",
+  "duration": 4.488,
+  "words": [
+    {
+      "text": "Of",
+      "start": 0.102083,
+      "end": 0.297416
+    },
+    {
+      "text": "course",
+      "start": 0.310416,
+      "end": 0.909374
+    },
+    {
+      "text": "Some",
+      "start": 1.809916,
+      "end": 2.148457
+    },
+    {
+      "text": "mysteries",
+      "start": 2.161458,
+      "end": 2.695333
+    },
+    {
+      "text": "come",
+      "start": 2.708333,
+      "end": 2.942708
+    },
+    {
+      "text": "with",
+      "start": 2.95575,
+      "end": 3.099
+    },
+    {
+      "text": "a",
+      "start": 3.112,
+      "end": 3.177125
+    },
+    {
+      "text": "bill",
+      "start": 3.190125,
+      "end": 3.56775
+    }
+  ],
+  "config": {
+    "text": "Of course. Some mysteries come with a bill.",
+    "voice": "en-US-AriaNeural",
+    "rate": "-4%",
+    "pitch": "+0Hz",
+    "provider": "edge-tts-7.3.1"
+  },
+  "file": "audio/s24.mp3"
+}

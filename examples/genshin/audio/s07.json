@@ -1,0 +1,64 @@
+{
+  "hash": "8cb4ec82bb47f329930c9d522809d5538ede9c1610ea4b6141bdf641ecf55b12",
+  "duration": 4.464,
+  "words": [
+    {
+      "text": "There",
+      "start": 0.102083,
+      "end": 0.336458
+    },
+    {
+      "text": "is",
+      "start": 0.3495,
+      "end": 0.466708
+    },
+    {
+      "text": "a",
+      "start": 0.479708,
+      "end": 0.531791
+    },
+    {
+      "text": "note",
+      "start": 0.544791,
+      "end": 0.818249
+    },
+    {
+      "text": "inside",
+      "start": 0.83125,
+      "end": 1.521375
+    },
+    {
+      "text": "Can",
+      "start": 2.421875,
+      "end": 2.64325
+    },
+    {
+      "text": "you",
+      "start": 2.65625,
+      "end": 2.773458
+    },
+    {
+      "text": "hold",
+      "start": 2.786458,
+      "end": 3.020833
+    },
+    {
+      "text": "it",
+      "start": 3.033875,
+      "end": 3.138041
+    },
+    {
+      "text": "still",
+      "start": 3.151041,
+      "end": 3.567707
+    }
+  ],
+  "config": {
+    "text": "There is a note inside. Can you hold it still?",
+    "voice": "en-US-AriaNeural",
+    "rate": "-4%",
+    "pitch": "+0Hz",
+    "provider": "edge-tts-7.3.1"
+  },
+  "file": "audio/s07.mp3"
+}

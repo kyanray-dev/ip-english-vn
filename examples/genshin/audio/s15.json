@@ -1,0 +1,39 @@
+{
+  "hash": "3946f0ecb368b80cd9b8033be049387caf0e325dab9bd6e409142f3a0093fdea",
+  "duration": 2.448,
+  "words": [
+    {
+      "text": "Can",
+      "start": 0.104958,
+      "end": 0.338458
+    },
+    {
+      "text": "you",
+      "start": 0.352208,
+      "end": 0.489583
+    },
+    {
+      "text": "remember",
+      "start": 0.503291,
+      "end": 0.915374
+    },
+    {
+      "text": "the",
+      "start": 0.929125,
+      "end": 1.025291
+    },
+    {
+      "text": "ending",
+      "start": 1.039,
+      "end": 1.492291
+    }
+  ],
+  "config": {
+    "text": "Can you remember the ending?",
+    "voice": "en-US-AriaNeural",
+    "rate": "-9%",
+    "pitch": "+0Hz",
+    "provider": "edge-tts-7.3.1"
+  },
+  "file": "audio/s15.mp3"
+}

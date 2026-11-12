@@ -1,0 +1,1673 @@
+{
+  "version": 1,
+  "ip": "Genshin Impact / 原神",
+  "title": "The Lantern Against the Wind",
+  "title_zh": "逆风的灯笼",
+  "subtitle": "A MONDSTADT MYSTERY",
+  "level": "B1",
+  "seed": 19,
+  "prop": "lantern",
+  "ending_title": "A song returned to the sky.",
+  "review_terms": [
+    "against",
+    "make an exception",
+    "let it go"
+  ],
+  "disclosure": "Original fan story · AI illustration & voices · Unofficial",
+  "background": "assets/background.png",
+  "characters": {
+    "narrator": {
+      "name": "STORY",
+      "zh": "旁白",
+      "voice": "en-GB-SoniaNeural",
+      "rate": "-6%",
+      "pitch": "+0Hz",
+      "color": "#d3bc82"
+    },
+    "lumine": {
+      "name": "LUMINE",
+      "zh": "旅行者 · 荧",
+      "voice": "en-US-AriaNeural",
+      "rate": "-4%",
+      "pitch": "+0Hz",
+      "color": "#f5d588",
+      "sprite": "assets/lumine.png",
+      "side": "left"
+    },
+    "venti": {
+      "name": "VENTI",
+      "zh": "温迪",
+      "voice": "en-GB-RyanNeural",
+      "rate": "+0%",
+      "pitch": "+7Hz",
+      "color": "#8ce0c6",
+      "sprite": "assets/venti.png",
+      "side": "right"
+    }
+  },
+  "lines": [
+    {
+      "id": "s01",
+      "speaker": "narrator",
+      "en": "At dusk, the Traveler found a lantern floating above the bridge.",
+      "zh": "暮色中，旅行者发现一盏灯笼漂浮在桥上。",
+      "stage": [],
+      "act": "01 / THE STRANGE LIGHT",
+      "tone": "mysterious",
+      "vocab": {
+        "term": "at dusk",
+        "ipa": "/æt dʌsk/",
+        "meaning": "在黄昏时",
+        "note": "dusk = 日落后、天黑前"
+      },
+      "audio": "audio/s01.mp3",
+      "words": [
+        {
+          "text": "At",
+          "start": 0.143083,
+          "end": 0.342541
+        },
+        {
+          "text": "dusk",
+          "start": 0.355833,
+          "end": 0.861166
+        },
+        {
+          "text": "the",
+          "start": 1.140416,
+          "end": 1.246791
+        },
+        {
+          "text": "Traveler",
+          "start": 1.260125,
+          "end": 1.71225
+        },
+        {
+          "text": "found",
+          "start": 1.725541,
+          "end": 2.031374
+        },
+        {
+          "text": "a",
+          "start": 2.044666,
+          "end": 2.084541
+        },
+        {
+          "text": "lantern",
+          "start": 2.097875,
+          "end": 2.669666
+        },
+        {
+          "text": "floating",
+          "start": 2.682958,
+          "end": 3.161666
+        },
+        {
+          "text": "above",
+          "start": 3.175,
+          "end": 3.480833
+        },
+        {
+          "text": "the",
+          "start": 3.494166,
+          "end": 3.600541
+        },
+        {
+          "text": "bridge",
+          "start": 3.613833,
+          "end": 4.132458
+        }
+      ],
+      "speech_duration": 4.536,
+      "start": 5.0,
+      "audio_start": 5.3,
+      "end": 10.136
+    },
+    {
+      "id": "s02",
+      "speaker": "lumine",
+      "en": "Wait. That lantern is moving against the wind.",
+      "zh": "等等。那盏灯笼正逆着风移动。",
+      "stage": [
+        "lumine"
+      ],
+      "act": "01 / THE STRANGE LIGHT",
+      "tone": "curious",
+      "vocab": {
+        "term": "against",
+        "ipa": "/əˈɡenst/",
+        "meaning": "逆着；与……方向相反",
+        "note": "against the wind = 逆风"
+      },
+      "audio": "audio/s02.mp3",
+      "words": [
+        {
+          "text": "Wait",
+          "start": 0.102083,
+          "end": 0.688041
+        },
+        {
+          "text": "That",
+          "start": 1.575541,
+          "end": 1.861999
+        },
+        {
+          "text": "lantern",
+          "start": 1.875,
+          "end": 2.33075
+        },
+        {
+          "text": "is",
+          "start": 2.34375,
+          "end": 2.460958
+        },
+        {
+          "text": "moving",
+          "start": 2.473958,
+          "end": 2.825541
+        },
+        {
+          "text": "against",
+          "start": 2.838541,
+          "end": 3.242207
+        },
+        {
+          "text": "the",
+          "start": 3.255208,
+          "end": 3.359374
+        },
+        {
+          "text": "wind",
+          "start": 3.372416,
+          "end": 3.854207
+        }
+      ],
+      "speech_duration": 4.752,
+      "start": 10.136,
+      "audio_start": 10.436,
+      "end": 15.488
+    },
+    {
+      "id": "s03",
+      "speaker": "venti",
+      "en": "Well, even lanterns get tired of following everyone else.",
+      "zh": "嗯，连灯笼也会厌倦一直跟着别人走呢。",
+      "stage": [
+        "lumine",
+        "venti"
+      ],
+      "act": "01 / THE STRANGE LIGHT",
+      "tone": "playful",
+      "vocab": {
+        "term": "get tired of",
+        "ipa": "/ɡet ˈtaɪəd əv/",
+        "meaning": "对……感到厌倦",
+        "note": "后接名词或动词 -ing"
+      },
+      "audio": "audio/s03.mp3",
+      "words": [
+        {
+          "text": "Well",
+          "start": 0.1,
+          "end": 0.45
+        },
+        {
+          "text": "even",
+          "start": 0.6625,
+          "end": 0.9
+        },
+        {
+          "text": "lanterns",
+          "start": 0.9125,
+          "end": 1.35
+        },
+        {
+          "text": "get",
+          "start": 1.3625,
+          "end": 1.5875
+        },
+        {
+          "text": "tired",
+          "start": 1.6,
+          "end": 1.95
+        },
+        {
+          "text": "of",
+          "start": 1.9625,
+          "end": 2.0375
+        },
+        {
+          "text": "following",
+          "start": 2.05,
+          "end": 2.475
+        },
+        {
+          "text": "everyone",
+          "start": 2.4875,
+          "end": 2.875
+        },
+        {
+          "text": "else",
+          "start": 2.8875,
+          "end": 3.3125
+        }
+      ],
+      "speech_duration": 4.176,
+      "start": 15.488,
+      "audio_start": 15.788,
+      "end": 20.264
+    },
+    {
+      "id": "s04",
+      "speaker": "lumine",
+      "en": "You know something, don't you?",
+      "zh": "你知道些什么，对吧？",
+      "stage": [
+        "lumine",
+        "venti"
+      ],
+      "act": "01 / THE STRANGE LIGHT",
+      "tone": "skeptical",
+      "audio": "audio/s04.mp3",
+      "words": [
+        {
+          "text": "You",
+          "start": 0.102083,
+          "end": 0.284374
+        },
+        {
+          "text": "know",
+          "start": 0.297416,
+          "end": 0.466707
+        },
+        {
+          "text": "something",
+          "start": 0.479708,
+          "end": 0.987541
+        },
+        {
+          "text": "don't",
+          "start": 1.169791,
+          "end": 1.391166
+        },
+        {
+          "text": "you",
+          "start": 1.404166,
+          "end": 1.677624
+        }
+      ],
+      "speech_duration": 2.592,
+      "start": 20.264,
+      "audio_start": 20.564,
+      "end": 23.456
+    },
+    {
+      "id": "s05",
+      "speaker": "venti",
+      "en": "Only that the wind isn't carrying it. Listen.",
+      "zh": "我只知道，不是风在带着它走。听。",
+      "stage": [
+        "lumine",
+        "venti"
+      ],
+      "act": "01 / THE STRANGE LIGHT",
+      "tone": "quiet",
+      "audio": "audio/s05.mp3",
+      "words": [
+        {
+          "text": "Only",
+          "start": 0.1,
+          "end": 0.442125
+        },
+        {
+          "text": "that",
+          "start": 0.45525,
+          "end": 0.639458
+        },
+        {
+          "text": "the",
+          "start": 0.652625,
+          "end": 0.718416
+        },
+        {
+          "text": "wind",
+          "start": 0.731583,
+          "end": 1.060541
+        },
+        {
+          "text": "isn't",
+          "start": 1.073666,
+          "end": 1.297332
+        },
+        {
+          "text": "carrying",
+          "start": 1.310541,
+          "end": 1.810541
+        },
+        {
+          "text": "it",
+          "start": 1.823666,
+          "end": 2.086832
+        },
+        {
+          "text": "Listen",
+          "start": 2.997375,
+          "end": 3.5895
+        }
+      ],
+      "speech_duration": 4.512,
+      "start": 23.456,
+      "audio_start": 23.756,
+      "end": 28.817999999999998
+    },
+    {
+      "id": "s06",
+      "speaker": "narrator",
+      "en": "A faint melody drifted from the paper lantern.",
+      "zh": "一段微弱的旋律从纸灯笼里飘了出来。",
+      "stage": [
+        "lumine",
+        "venti"
+      ],
+      "act": "01 / THE STRANGE LIGHT",
+      "tone": "mysterious",
+      "vocab": {
+        "term": "faint",
+        "ipa": "/feɪnt/",
+        "meaning": "微弱的；隐约的",
+        "note": "这里修饰声音，不是“晕倒”"
+      },
+      "audio": "audio/s06.mp3",
+      "words": [
+        {
+          "text": "A",
+          "start": 0.143083,
+          "end": 0.222874
+        },
+        {
+          "text": "faint",
+          "start": 0.236166,
+          "end": 0.661707
+        },
+        {
+          "text": "melody",
+          "start": 0.675,
+          "end": 1.206916
+        },
+        {
+          "text": "drifted",
+          "start": 1.220208,
+          "end": 1.791999
+        },
+        {
+          "text": "from",
+          "start": 1.805333,
+          "end": 1.991499
+        },
+        {
+          "text": "the",
+          "start": 2.004791,
+          "end": 2.097874
+        },
+        {
+          "text": "paper",
+          "start": 2.111166,
+          "end": 2.456916
+        },
+        {
+          "text": "lantern",
+          "start": 2.470208,
+          "end": 3.095208
+        }
+      ],
+      "speech_duration": 3.504,
+      "start": 28.817999999999998,
+      "audio_start": 29.118,
+      "end": 32.922
+    },
+    {
+      "id": "s07",
+      "speaker": "lumine",
+      "en": "There is a note inside. Can you hold it still?",
+      "zh": "里面有张纸条。你能让它停住吗？",
+      "stage": [
+        "lumine",
+        "venti"
+      ],
+      "act": "02 / FOLLOW THE CLUE",
+      "tone": "curious",
+      "vocab": {
+        "term": "hold it still",
+        "ipa": "/həʊld ɪt stɪl/",
+        "meaning": "让它保持不动",
+        "note": "still 在这里是“不动的”"
+      },
+      "audio": "audio/s07.mp3",
+      "words": [
+        {
+          "text": "There",
+          "start": 0.102083,
+          "end": 0.336458
+        },
+        {
+          "text": "is",
+          "start": 0.3495,
+          "end": 0.466708
+        },
+        {
+          "text": "a",
+          "start": 0.479708,
+          "end": 0.531791
+        },
+        {
+          "text": "note",
+          "start": 0.544791,
+          "end": 0.818249
+        },
+        {
+          "text": "inside",
+          "start": 0.83125,
+          "end": 1.521375
+        },
+        {
+          "text": "Can",
+          "start": 2.421875,
+          "end": 2.64325
+        },
+        {
+          "text": "you",
+          "start": 2.65625,
+          "end": 2.773458
+        },
+        {
+          "text": "hold",
+          "start": 2.786458,
+          "end": 3.020833
+        },
+        {
+          "text": "it",
+          "start": 3.033875,
+          "end": 3.138041
+        },
+        {
+          "text": "still",
+          "start": 3.151041,
+          "end": 3.567707
+        }
+      ],
+      "speech_duration": 4.464,
+      "start": 32.922,
+      "audio_start": 33.221999999999994,
+      "end": 37.986
+    },
+    {
+      "id": "s08",
+      "speaker": "venti",
+      "en": "For you? I suppose the wind can make an exception.",
+      "zh": "为你？我想，风可以破个例。",
+      "stage": [
+        "lumine",
+        "venti"
+      ],
+      "act": "02 / FOLLOW THE CLUE",
+      "tone": "playful",
+      "vocab": {
+        "term": "make an exception",
+        "ipa": "/meɪk ən ɪkˈsepʃən/",
+        "meaning": "破例",
+        "note": "这一次不按通常的规则来"
+      },
+      "audio": "audio/s08.mp3",
+      "words": [
+        {
+          "text": "For",
+          "start": 0.1,
+          "end": 0.2625
+        },
+        {
+          "text": "you",
+          "start": 0.275,
+          "end": 0.6375
+        },
+        {
+          "text": "I",
+          "start": 1.5,
+          "end": 1.65
+        },
+        {
+          "text": "suppose",
+          "start": 1.6625,
+          "end": 2.075
+        },
+        {
+          "text": "the",
+          "start": 2.0875,
+          "end": 2.1625
+        },
+        {
+          "text": "wind",
+          "start": 2.175,
+          "end": 2.4625
+        },
+        {
+          "text": "can",
+          "start": 2.475,
+          "end": 2.5875
+        },
+        {
+          "text": "make",
+          "start": 2.6,
+          "end": 2.8
+        },
+        {
+          "text": "an",
+          "start": 2.8125,
+          "end": 2.8875
+        },
+        {
+          "text": "exception",
+          "start": 2.9,
+          "end": 3.5625
+        }
+      ],
+      "speech_duration": 4.44,
+      "start": 37.986,
+      "audio_start": 38.285999999999994,
+      "end": 43.025999999999996
+    },
+    {
+      "id": "s09",
+      "speaker": "narrator",
+      "en": "The lantern settled into her hands. She unfolded the note.",
+      "zh": "灯笼缓缓落入她手中。她展开了纸条。",
+      "stage": [
+        "lumine",
+        "venti"
+      ],
+      "act": "02 / FOLLOW THE CLUE",
+      "tone": "warm",
+      "audio": "audio/s09.mp3",
+      "words": [
+        {
+          "text": "The",
+          "start": 0.143083,
+          "end": 0.249458
+        },
+        {
+          "text": "lantern",
+          "start": 0.26275,
+          "end": 0.847875
+        },
+        {
+          "text": "settled",
+          "start": 0.861166,
+          "end": 1.366499
+        },
+        {
+          "text": "into",
+          "start": 1.379791,
+          "end": 1.712249
+        },
+        {
+          "text": "her",
+          "start": 1.725541,
+          "end": 1.858499
+        },
+        {
+          "text": "hands",
+          "start": 1.871791,
+          "end": 2.536666
+        },
+        {
+          "text": "She",
+          "start": 2.952125,
+          "end": 3.1915
+        },
+        {
+          "text": "unfolded",
+          "start": 3.204791,
+          "end": 3.882999
+        },
+        {
+          "text": "the",
+          "start": 3.896291,
+          "end": 4.002666
+        },
+        {
+          "text": "note",
+          "start": 4.015958,
+          "end": 4.561166
+        }
+      ],
+      "speech_duration": 4.944,
+      "start": 43.025999999999996,
+      "audio_start": 43.32599999999999,
+      "end": 48.56999999999999
+    },
+    {
+      "id": "s10",
+      "speaker": "lumine",
+      "en": "When the city falls silent, return my song to the sky.",
+      "zh": "当城市归于寂静，请将我的歌送回天空。",
+      "stage": [
+        "lumine",
+        "venti"
+      ],
+      "act": "02 / FOLLOW THE CLUE",
+      "tone": "quiet",
+      "vocab": {
+        "term": "falls silent",
+        "ipa": "/fɔːlz ˈsaɪlənt/",
+        "meaning": "安静下来",
+        "note": "fall + 形容词：进入某种状态"
+      },
+      "audio": "audio/s10.mp3",
+      "words": [
+        {
+          "text": "When",
+          "start": 0.104958,
+          "end": 0.297249
+        },
+        {
+          "text": "the",
+          "start": 0.311,
+          "end": 0.407166
+        },
+        {
+          "text": "city",
+          "start": 0.420875,
+          "end": 0.709333
+        },
+        {
+          "text": "falls",
+          "start": 0.723083,
+          "end": 1.066499
+        },
+        {
+          "text": "silent",
+          "start": 1.080208,
+          "end": 1.629666
+        },
+        {
+          "text": "return",
+          "start": 1.849458,
+          "end": 2.261541
+        },
+        {
+          "text": "my",
+          "start": 2.275291,
+          "end": 2.453874
+        },
+        {
+          "text": "song",
+          "start": 2.467583,
+          "end": 2.824708
+        },
+        {
+          "text": "to",
+          "start": 2.838458,
+          "end": 2.920874
+        },
+        {
+          "text": "the",
+          "start": 2.934625,
+          "end": 3.05825
+        },
+        {
+          "text": "sky",
+          "start": 3.071958,
+          "end": 3.635124
+        }
+      ],
+      "speech_duration": 4.608,
+      "start": 48.56999999999999,
+      "audio_start": 48.86999999999999,
+      "end": 54.02799999999999
+    },
+    {
+      "id": "s11",
+      "speaker": "lumine",
+      "en": "A song? I thought we were looking for treasure.",
+      "zh": "一首歌？我还以为我们在找宝藏。",
+      "stage": [
+        "lumine",
+        "venti"
+      ],
+      "act": "02 / FOLLOW THE CLUE",
+      "tone": "skeptical",
+      "audio": "audio/s11.mp3",
+      "words": [
+        {
+          "text": "A",
+          "start": 0.102083,
+          "end": 0.232291
+        },
+        {
+          "text": "song",
+          "start": 0.245333,
+          "end": 0.701083
+        },
+        {
+          "text": "I",
+          "start": 1.601583,
+          "end": 1.757833
+        },
+        {
+          "text": "thought",
+          "start": 1.770833,
+          "end": 2.031249
+        },
+        {
+          "text": "we",
+          "start": 2.044291,
+          "end": 2.148457
+        },
+        {
+          "text": "were",
+          "start": 2.161458,
+          "end": 2.278666
+        },
+        {
+          "text": "looking",
+          "start": 2.291666,
+          "end": 2.617207
+        },
+        {
+          "text": "for",
+          "start": 2.630208,
+          "end": 2.747416
+        },
+        {
+          "text": "treasure",
+          "start": 2.760416,
+          "end": 3.294291
+        }
+      ],
+      "speech_duration": 4.2,
+      "start": 54.02799999999999,
+      "audio_start": 54.32799999999999,
+      "end": 58.82799999999999
+    },
+    {
+      "id": "s12",
+      "speaker": "venti",
+      "en": "That depends. What counts as treasure to you?",
+      "zh": "那得看情况。对你来说，什么才算宝藏？",
+      "stage": [
+        "lumine",
+        "venti"
+      ],
+      "act": "02 / FOLLOW THE CLUE",
+      "tone": "gentle",
+      "vocab": {
+        "term": "counts as",
+        "ipa": "/kaʊnts æz/",
+        "meaning": "算作；被视为",
+        "note": "What counts as treasure? 什么算宝藏？"
+      },
+      "audio": "audio/s12.mp3",
+      "words": [
+        {
+          "text": "That",
+          "start": 0.1,
+          "end": 0.336833
+        },
+        {
+          "text": "depends",
+          "start": 0.35,
+          "end": 1.021041
+        },
+        {
+          "text": "What",
+          "start": 1.931583,
+          "end": 2.168416
+        },
+        {
+          "text": "counts",
+          "start": 2.181583,
+          "end": 2.497374
+        },
+        {
+          "text": "as",
+          "start": 2.510541,
+          "end": 2.628957
+        },
+        {
+          "text": "treasure",
+          "start": 2.642125,
+          "end": 2.997375
+        },
+        {
+          "text": "to",
+          "start": 3.010541,
+          "end": 3.181582
+        },
+        {
+          "text": "you",
+          "start": 3.19475,
+          "end": 3.523708
+        }
+      ],
+      "speech_duration": 4.44,
+      "start": 58.82799999999999,
+      "audio_start": 59.127999999999986,
+      "end": 64.118
+    },
+    {
+      "id": "choice01",
+      "type": "choice",
+      "speaker": "narrator",
+      "en": "Which clue made the lantern unusual?",
+      "zh": "是哪条线索让灯笼显得不寻常？",
+      "stage": [
+        "lumine",
+        "venti"
+      ],
+      "act": "YOUR TURN / READ THE CLUE",
+      "seconds": 7,
+      "options": [
+        {
+          "en": "It moved against the wind.",
+          "zh": "它逆风而行。",
+          "feedback": "找到了！against 表示与风的方向相反。"
+        },
+        {
+          "en": "It followed the wind.",
+          "zh": "它顺风而行。",
+          "feedback": "再想想：荧说的是 against the wind，意味着逆风。"
+        }
+      ],
+      "answer": 0,
+      "audio": "audio/choice01.mp3",
+      "words": [
+        {
+          "text": "Which",
+          "start": 0.143083,
+          "end": 0.462249
+        },
+        {
+          "text": "clue",
+          "start": 0.475541,
+          "end": 0.781374
+        },
+        {
+          "text": "made",
+          "start": 0.794666,
+          "end": 1.060624
+        },
+        {
+          "text": "the",
+          "start": 1.073916,
+          "end": 1.166999
+        },
+        {
+          "text": "lantern",
+          "start": 1.180333,
+          "end": 1.725541
+        },
+        {
+          "text": "unusual",
+          "start": 1.738833,
+          "end": 2.549999
+        }
+      ],
+      "speech_duration": 2.952,
+      "start": 64.118,
+      "audio_start": 64.41799999999999,
+      "end": 74.66999999999999
+    },
+    {
+      "id": "s13",
+      "speaker": "narrator",
+      "en": "Against the wind. Something inside was guiding it.",
+      "zh": "逆着风。是灯笼里的某种东西在指引它。",
+      "stage": [
+        "lumine",
+        "venti"
+      ],
+      "act": "CLUE FOUND / AGAINST THE WIND",
+      "tone": "warm",
+      "vocab": {
+        "term": "guiding",
+        "ipa": "/ˈɡaɪdɪŋ/",
+        "meaning": "指引着",
+        "note": "guide → guiding：带领方向"
+      },
+      "audio": "audio/s13.mp3",
+      "words": [
+        {
+          "text": "Against",
+          "start": 0.143083,
+          "end": 0.635124
+        },
+        {
+          "text": "the",
+          "start": 0.648416,
+          "end": 0.741499
+        },
+        {
+          "text": "wind",
+          "start": 0.754791,
+          "end": 1.313291
+        },
+        {
+          "text": "Something",
+          "start": 1.715416,
+          "end": 2.207457
+        },
+        {
+          "text": "inside",
+          "start": 2.22075,
+          "end": 2.84575
+        },
+        {
+          "text": "was",
+          "start": 2.859041,
+          "end": 3.031916
+        },
+        {
+          "text": "guiding",
+          "start": 3.045208,
+          "end": 3.497333
+        },
+        {
+          "text": "it",
+          "start": 3.510625,
+          "end": 3.882958
+        }
+      ],
+      "speech_duration": 4.272,
+      "start": 74.66999999999999,
+      "audio_start": 74.96999999999998,
+      "end": 79.54199999999999
+    },
+    {
+      "id": "s14",
+      "speaker": "venti",
+      "en": "This tune... I heard it here, years ago.",
+      "zh": "这段曲调……多年前，我曾在这里听过。",
+      "stage": [
+        "lumine",
+        "venti"
+      ],
+      "act": "03 / A SONG REMEMBERED",
+      "tone": "quiet",
+      "audio": "audio/s14.mp3",
+      "words": [
+        {
+          "text": "This",
+          "start": 0.1,
+          "end": 0.376333
+        },
+        {
+          "text": "tune",
+          "start": 0.389458,
+          "end": 0.876291
+        },
+        {
+          "text": "I",
+          "start": 1.786833,
+          "end": 1.944708
+        },
+        {
+          "text": "heard",
+          "start": 1.957875,
+          "end": 2.234208
+        },
+        {
+          "text": "it",
+          "start": 2.247375,
+          "end": 2.3395
+        },
+        {
+          "text": "here",
+          "start": 2.352625,
+          "end": 2.681583
+        },
+        {
+          "text": "years",
+          "start": 2.8,
+          "end": 3.036833
+        },
+        {
+          "text": "ago",
+          "start": 3.05,
+          "end": 3.44475
+        }
+      ],
+      "speech_duration": 4.368,
+      "start": 79.54199999999999,
+      "audio_start": 79.84199999999998,
+      "end": 84.75999999999999
+    },
+    {
+      "id": "s15",
+      "speaker": "lumine",
+      "en": "Can you remember the ending?",
+      "zh": "你还记得结尾吗？",
+      "stage": [
+        "lumine",
+        "venti"
+      ],
+      "act": "03 / A SONG REMEMBERED",
+      "tone": "gentle",
+      "audio": "audio/s15.mp3",
+      "words": [
+        {
+          "text": "Can",
+          "start": 0.104958,
+          "end": 0.338458
+        },
+        {
+          "text": "you",
+          "start": 0.352208,
+          "end": 0.489583
+        },
+        {
+          "text": "remember",
+          "start": 0.503291,
+          "end": 0.915374
+        },
+        {
+          "text": "the",
+          "start": 0.929125,
+          "end": 1.025291
+        },
+        {
+          "text": "ending",
+          "start": 1.039,
+          "end": 1.492291
+        }
+      ],
+      "speech_duration": 2.448,
+      "start": 84.75999999999999,
+      "audio_start": 85.05999999999999,
+      "end": 88.05799999999999
+    },
+    {
+      "id": "s16",
+      "speaker": "venti",
+      "en": "No. But perhaps it doesn't need the same ending.",
+      "zh": "不记得了。但也许，它不需要同一个结尾。",
+      "stage": [
+        "lumine",
+        "venti"
+      ],
+      "act": "03 / A SONG REMEMBERED",
+      "tone": "gentle",
+      "audio": "audio/s16.mp3",
+      "words": [
+        {
+          "text": "No.",
+          "start": 0.1,
+          "end": 0.613166
+        },
+        {
+          "text": "But",
+          "start": 1.523666,
+          "end": 1.707874
+        },
+        {
+          "text": "perhaps",
+          "start": 1.721041,
+          "end": 2.128916
+        },
+        {
+          "text": "it",
+          "start": 2.142125,
+          "end": 2.247375
+        },
+        {
+          "text": "doesn't",
+          "start": 2.260541,
+          "end": 2.510541
+        },
+        {
+          "text": "need",
+          "start": 2.523666,
+          "end": 2.734207
+        },
+        {
+          "text": "the",
+          "start": 2.747375,
+          "end": 2.826333
+        },
+        {
+          "text": "same",
+          "start": 2.839458,
+          "end": 3.102624
+        },
+        {
+          "text": "ending",
+          "start": 3.115791,
+          "end": 3.536832
+        }
+      ],
+      "speech_duration": 4.464,
+      "start": 88.05799999999999,
+      "audio_start": 88.35799999999999,
+      "end": 93.37199999999999
+    },
+    {
+      "id": "s17",
+      "speaker": "narrator",
+      "en": "He played three gentle notes. The lantern began to rise.",
+      "zh": "他轻轻拨响三个音符。灯笼开始升起。",
+      "stage": [
+        "lumine",
+        "venti"
+      ],
+      "act": "03 / A SONG REMEMBERED",
+      "tone": "warm",
+      "sfx": "lyre",
+      "audio": "audio/s17.mp3",
+      "words": [
+        {
+          "text": "He",
+          "start": 0.143083,
+          "end": 0.289374
+        },
+        {
+          "text": "played",
+          "start": 0.302666,
+          "end": 0.714916
+        },
+        {
+          "text": "three",
+          "start": 0.728208,
+          "end": 1.047374
+        },
+        {
+          "text": "gentle",
+          "start": 1.060625,
+          "end": 1.499458
+        },
+        {
+          "text": "notes",
+          "start": 1.51275,
+          "end": 2.124458
+        },
+        {
+          "text": "The",
+          "start": 2.553208,
+          "end": 2.659583
+        },
+        {
+          "text": "lantern",
+          "start": 2.672875,
+          "end": 3.231375
+        },
+        {
+          "text": "began",
+          "start": 3.244666,
+          "end": 3.603707
+        },
+        {
+          "text": "to",
+          "start": 3.617041,
+          "end": 3.763332
+        },
+        {
+          "text": "rise",
+          "start": 3.776583,
+          "end": 4.388291
+        }
+      ],
+      "speech_duration": 4.776,
+      "start": 93.37199999999999,
+      "audio_start": 93.67199999999998,
+      "end": 98.74799999999999
+    },
+    {
+      "id": "s18",
+      "speaker": "lumine",
+      "en": "Should we let it go?",
+      "zh": "我们该放它走吗？",
+      "stage": [
+        "lumine",
+        "venti"
+      ],
+      "act": "03 / A SONG REMEMBERED",
+      "tone": "gentle",
+      "vocab": {
+        "term": "let it go",
+        "ipa": "/let ɪt ɡəʊ/",
+        "meaning": "放它走；放手",
+        "note": "let + 宾语 + 动词原形"
+      },
+      "audio": "audio/s18.mp3",
+      "words": [
+        {
+          "text": "Should",
+          "start": 0.104958,
+          "end": 0.379666
+        },
+        {
+          "text": "we",
+          "start": 0.393416,
+          "end": 0.517041
+        },
+        {
+          "text": "let",
+          "start": 0.53075,
+          "end": 0.723041
+        },
+        {
+          "text": "it",
+          "start": 0.736833,
+          "end": 0.819249
+        },
+        {
+          "text": "go",
+          "start": 0.832958,
+          "end": 1.245041
+        }
+      ],
+      "speech_duration": 2.208,
+      "start": 98.74799999999999,
+      "audio_start": 99.04799999999999,
+      "end": 101.80599999999998
+    },
+    {
+      "id": "s19",
+      "speaker": "venti",
+      "en": "Some things find their way home only when we let go.",
+      "zh": "有些东西，只有我们放手，它们才能找到回家的路。",
+      "stage": [
+        "lumine",
+        "venti"
+      ],
+      "act": "03 / A SONG REMEMBERED",
+      "tone": "gentle",
+      "audio": "audio/s19.mp3",
+      "words": [
+        {
+          "text": "Some",
+          "start": 0.1,
+          "end": 0.415791
+        },
+        {
+          "text": "things",
+          "start": 0.428958,
+          "end": 0.678958
+        },
+        {
+          "text": "find",
+          "start": 0.692125,
+          "end": 0.981583
+        },
+        {
+          "text": "their",
+          "start": 0.99475,
+          "end": 1.086875
+        },
+        {
+          "text": "way",
+          "start": 1.1,
+          "end": 1.336833
+        },
+        {
+          "text": "home",
+          "start": 1.35,
+          "end": 1.678958
+        },
+        {
+          "text": "only",
+          "start": 1.692125,
+          "end": 1.955291
+        },
+        {
+          "text": "when",
+          "start": 1.968416,
+          "end": 2.152624
+        },
+        {
+          "text": "we",
+          "start": 2.165791,
+          "end": 2.271041
+        },
+        {
+          "text": "let",
+          "start": 2.284208,
+          "end": 2.507874
+        },
+        {
+          "text": "go",
+          "start": 2.521041,
+          "end": 2.863166
+        }
+      ],
+      "speech_duration": 3.792,
+      "start": 101.80599999999998,
+      "audio_start": 102.10599999999998,
+      "end": 106.44799999999998
+    },
+    {
+      "id": "s20",
+      "speaker": "narrator",
+      "en": "She opened her hands. This time, the lantern followed the wind.",
+      "zh": "她松开了双手。这一次，灯笼顺着风飞去。",
+      "stage": [
+        "lumine",
+        "venti"
+      ],
+      "act": "QUEST COMPLETE / A SONG RETURNED",
+      "tone": "warm",
+      "audio": "audio/s20.mp3",
+      "words": [
+        {
+          "text": "She",
+          "start": 0.129791,
+          "end": 0.395749
+        },
+        {
+          "text": "opened",
+          "start": 0.409041,
+          "end": 0.794666
+        },
+        {
+          "text": "her",
+          "start": 0.807958,
+          "end": 0.940916
+        },
+        {
+          "text": "hands",
+          "start": 0.95425,
+          "end": 1.632458
+        },
+        {
+          "text": "This",
+          "start": 2.061166,
+          "end": 2.327124
+        },
+        {
+          "text": "time",
+          "start": 2.340416,
+          "end": 2.819124
+        },
+        {
+          "text": "the",
+          "start": 3.098416,
+          "end": 3.191499
+        },
+        {
+          "text": "lantern",
+          "start": 3.204791,
+          "end": 3.763291
+        },
+        {
+          "text": "followed",
+          "start": 3.776583,
+          "end": 4.188833
+        },
+        {
+          "text": "the",
+          "start": 4.202125,
+          "end": 4.295208
+        },
+        {
+          "text": "wind",
+          "start": 4.3085,
+          "end": 4.813833
+        }
+      ],
+      "speech_duration": 5.208,
+      "start": 106.44799999999998,
+      "audio_start": 106.74799999999998,
+      "end": 112.25599999999997
+    },
+    {
+      "id": "s21",
+      "speaker": "lumine",
+      "en": "Venti? Was that your song?",
+      "zh": "温迪？那是你的歌吗？",
+      "stage": [
+        "lumine",
+        "venti"
+      ],
+      "act": "QUEST COMPLETE / A SONG RETURNED",
+      "tone": "curious",
+      "audio": "audio/s21.mp3",
+      "words": [
+        {
+          "text": "Venti",
+          "start": 0.102083,
+          "end": 0.727083
+        },
+        {
+          "text": "Was",
+          "start": 1.627625,
+          "end": 1.835958
+        },
+        {
+          "text": "that",
+          "start": 1.848958,
+          "end": 2.044291
+        },
+        {
+          "text": "your",
+          "start": 2.057291,
+          "end": 2.200541
+        },
+        {
+          "text": "song",
+          "start": 2.213541,
+          "end": 2.669291
+        }
+      ],
+      "speech_duration": 3.576,
+      "start": 112.25599999999997,
+      "audio_start": 112.55599999999997,
+      "end": 116.43199999999997
+    },
+    {
+      "id": "s22",
+      "speaker": "venti",
+      "en": "Mine? Well... buy me a drink, and I might tell you.",
+      "zh": "我的？嗯……请我喝一杯，我也许会告诉你。",
+      "stage": [
+        "lumine",
+        "venti"
+      ],
+      "act": "QUEST COMPLETE / A SONG RETURNED",
+      "tone": "playful",
+      "audio": "audio/s22.mp3",
+      "words": [
+        {
+          "text": "Mine",
+          "start": 0.1,
+          "end": 0.625
+        },
+        {
+          "text": "Well",
+          "start": 1.4875,
+          "end": 1.8875
+        },
+        {
+          "text": "buy",
+          "start": 2.0625,
+          "end": 2.1875
+        },
+        {
+          "text": "me",
+          "start": 2.2,
+          "end": 2.375
+        },
+        {
+          "text": "a",
+          "start": 2.3875,
+          "end": 2.45
+        },
+        {
+          "text": "drink",
+          "start": 2.4625,
+          "end": 2.825
+        },
+        {
+          "text": "and",
+          "start": 3.0625,
+          "end": 3.125
+        },
+        {
+          "text": "I",
+          "start": 3.1375,
+          "end": 3.2
+        },
+        {
+          "text": "might",
+          "start": 3.2125,
+          "end": 3.475
+        },
+        {
+          "text": "tell",
+          "start": 3.4875,
+          "end": 3.7125
+        },
+        {
+          "text": "you",
+          "start": 3.725,
+          "end": 4.0125
+        }
+      ],
+      "speech_duration": 4.896,
+      "start": 116.43199999999997,
+      "audio_start": 116.73199999999997,
+      "end": 121.92799999999997
+    },
+    {
+      "id": "s23",
+      "speaker": "narrator",
+      "en": "Before she could answer, the bard was already walking away.",
+      "zh": "她还没来得及回答，吟游诗人已经转身离去。",
+      "stage": [
+        "lumine"
+      ],
+      "act": "QUEST COMPLETE / A SONG RETURNED",
+      "tone": "warm",
+      "audio": "audio/s23.mp3",
+      "words": [
+        {
+          "text": "Before",
+          "start": 0.100791,
+          "end": 0.499707
+        },
+        {
+          "text": "she",
+          "start": 0.513041,
+          "end": 0.699207
+        },
+        {
+          "text": "could",
+          "start": 0.7125,
+          "end": 0.872083
+        },
+        {
+          "text": "answer",
+          "start": 0.885375,
+          "end": 1.404
+        },
+        {
+          "text": "the",
+          "start": 1.696541,
+          "end": 1.802916
+        },
+        {
+          "text": "bard",
+          "start": 1.816208,
+          "end": 2.148666
+        },
+        {
+          "text": "was",
+          "start": 2.161958,
+          "end": 2.334833
+        },
+        {
+          "text": "already",
+          "start": 2.348125,
+          "end": 2.680583
+        },
+        {
+          "text": "walking",
+          "start": 2.693875,
+          "end": 3.146
+        },
+        {
+          "text": "away",
+          "start": 3.159291,
+          "end": 3.611416
+        }
+      ],
+      "speech_duration": 4.008,
+      "start": 121.92799999999997,
+      "audio_start": 122.22799999999997,
+      "end": 126.53599999999997
+    },
+    {
+      "id": "s24",
+      "speaker": "lumine",
+      "en": "Of course. Some mysteries come with a bill.",
+      "zh": "果然。有些谜团，是附带账单的。",
+      "stage": [
+        "lumine"
+      ],
+      "act": "QUEST COMPLETE / A SONG RETURNED",
+      "tone": "playful",
+      "vocab": {
+        "term": "come with",
+        "ipa": "/kʌm wɪð/",
+        "meaning": "附带；伴随",
+        "note": "come with a bill = 还得付账"
+      },
+      "audio": "audio/s24.mp3",
+      "words": [
+        {
+          "text": "Of",
+          "start": 0.102083,
+          "end": 0.297416
+        },
+        {
+          "text": "course",
+          "start": 0.310416,
+          "end": 0.909374
+        },
+        {
+          "text": "Some",
+          "start": 1.809916,
+          "end": 2.148457
+        },
+        {
+          "text": "mysteries",
+          "start": 2.161458,
+          "end": 2.695333
+        },
+        {
+          "text": "come",
+          "start": 2.708333,
+          "end": 2.942708
+        },
+        {
+          "text": "with",
+          "start": 2.95575,
+          "end": 3.099
+        },
+        {
+          "text": "a",
+          "start": 3.112,
+          "end": 3.177125
+        },
+        {
+          "text": "bill",
+          "start": 3.190125,
+          "end": 3.56775
+        }
+      ],
+      "speech_duration": 4.488,
+      "start": 126.53599999999997,
+      "audio_start": 126.83599999999997,
+      "end": 131.62399999999997
+    }
+  ],
+  "duration": 139.62399999999997,
+  "outro_start": 131.62399999999997,
+  "timing_source": "TTS WordBoundary (not estimated)"
+}

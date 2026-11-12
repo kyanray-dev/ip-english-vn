@@ -1,0 +1,69 @@
+{
+  "hash": "4a0ae74aafebce9c0b8481c71def7c8fac45ce25836c7b0277aed8628bb33818",
+  "duration": 4.896,
+  "words": [
+    {
+      "text": "Mine",
+      "start": 0.1,
+      "end": 0.625
+    },
+    {
+      "text": "Well",
+      "start": 1.4875,
+      "end": 1.8875
+    },
+    {
+      "text": "buy",
+      "start": 2.0625,
+      "end": 2.1875
+    },
+    {
+      "text": "me",
+      "start": 2.2,
+      "end": 2.375
+    },
+    {
+      "text": "a",
+      "start": 2.3875,
+      "end": 2.45
+    },
+    {
+      "text": "drink",
+      "start": 2.4625,
+      "end": 2.825
+    },
+    {
+      "text": "and",
+      "start": 3.0625,
+      "end": 3.125
+    },
+    {
+      "text": "I",
+      "start": 3.1375,
+      "end": 3.2
+    },
+    {
+      "text": "might",
+      "start": 3.2125,
+      "end": 3.475
+    },
+    {
+      "text": "tell",
+      "start": 3.4875,
+      "end": 3.7125
+    },
+    {
+      "text": "you",
+      "start": 3.725,
+      "end": 4.0125
+    }
+  ],
+  "config": {
+    "text": "Mine? Well... buy me a drink, and I might tell you.",
+    "voice": "en-GB-RyanNeural",
+    "rate": "+0%",
+    "pitch": "+7Hz",
+    "provider": "edge-tts-7.3.1"
+  },
+  "file": "audio/s22.mp3"
+}

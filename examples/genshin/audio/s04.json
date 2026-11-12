@@ -1,0 +1,39 @@
+{
+  "hash": "966fb8042e08d07d1c8b6392072e852acb8da098b6077f3aff10510e3b9fb74f",
+  "duration": 2.592,
+  "words": [
+    {
+      "text": "You",
+      "start": 0.102083,
+      "end": 0.284374
+    },
+    {
+      "text": "know",
+      "start": 0.297416,
+      "end": 0.466707
+    },
+    {
+      "text": "something",
+      "start": 0.479708,
+      "end": 0.987541
+    },
+    {
+      "text": "don't",
+      "start": 1.169791,
+      "end": 1.391166
+    },
+    {
+      "text": "you",
+      "start": 1.404166,
+      "end": 1.677624
+    }
+  ],
+  "config": {
+    "text": "You know something, don't you?",
+    "voice": "en-US-AriaNeural",
+    "rate": "-4%",
+    "pitch": "+0Hz",
+    "provider": "edge-tts-7.3.1"
+  },
+  "file": "audio/s04.mp3"
+}

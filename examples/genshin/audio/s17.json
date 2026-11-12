@@ -1,0 +1,64 @@
+{
+  "hash": "df2631cac557f4c352d369828116c49dc96414b4be2f115ed50412ce43a777e3",
+  "duration": 4.776,
+  "words": [
+    {
+      "text": "He",
+      "start": 0.143083,
+      "end": 0.289374
+    },
+    {
+      "text": "played",
+      "start": 0.302666,
+      "end": 0.714916
+    },
+    {
+      "text": "three",
+      "start": 0.728208,
+      "end": 1.047374
+    },
+    {
+      "text": "gentle",
+      "start": 1.060625,
+      "end": 1.499458
+    },
+    {
+      "text": "notes",
+      "start": 1.51275,
+      "end": 2.124458
+    },
+    {
+      "text": "The",
+      "start": 2.553208,
+      "end": 2.659583
+    },
+    {
+      "text": "lantern",
+      "start": 2.672875,
+      "end": 3.231375
+    },
+    {
+      "text": "began",
+      "start": 3.244666,
+      "end": 3.603707
+    },
+    {
+      "text": "to",
+      "start": 3.617041,
+      "end": 3.763332
+    },
+    {
+      "text": "rise",
+      "start": 3.776583,
+      "end": 4.388291
+    }
+  ],
+  "config": {
+    "text": "He played three gentle notes. The lantern began to rise.",
+    "voice": "en-GB-SoniaNeural",
+    "rate": "-6%",
+    "pitch": "+0Hz",
+    "provider": "edge-tts-7.3.1"
+  },
+  "file": "audio/s17.mp3"
+}
