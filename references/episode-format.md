@@ -9,6 +9,7 @@
 | version | 固定为 1 |
 | ip, title, title_zh | IP 名称、英文标题、中文标题 |
 | level | 默认 B1 |
+| ui_theme | 可选 `auto`、`jade-paper`、`mystery`；明确指定优先，未知值在配音前报错。auto 按 IP 关键词选择悬疑，其余兼容青玉宣纸 |
 | brand | 可选片头栏目显示名，建议不超过 16 个英文字符；默认 WIND / WORDS |
 | scene_label | 可选地点与时间，如「坊市 · 暮色」；对白页左上显示，省略则使用该段 act |
 | background | 相对 episode 目录的背景路径 |
@@ -19,7 +20,7 @@
 | characters | ID → 人物配置 |
 | lines | 按播放顺序的对白/旁白/选择题 |
 
-人物配置包含 `name`（英文显示名）、`zh`（建议 2–6 字的简短中文名）、`voice`（Edge 声线 ID）、`rate`（如 `-4%`）、`pitch`（如 `+0Hz`）、`color`（HEX，保留的角色元数据；当前玉牌使用统一青玉配色）。在场角色还需要 `sprite` 和 `side: left/right`；旁白没有立绘。三人使用不同声线。不能用角色 ID 当成真实 TTS voice。中英文名在玉牌内分别换行；不要在显示名中加入「原创角色」等说明。
+人物配置包含 `name`（英文显示名）、`zh`（建议 2–6 字的简短中文名）、`voice`（Edge 声线 ID）、`rate`（如 `-4%`）、`pitch`（如 `+0Hz`）、`color`（HEX，保留的角色元数据；界面使用主题配色）。在场角色还需要 `sprite` 和 `side: left/right`；旁白没有立绘。可选 `sprite_height` 为 300–640 的数值，单位是 1280×720 逻辑画布像素，默认 612；例如儿童设为 455，脚部仍与成人处于同一舞台基线。三人使用不同声线。不能用角色 ID 当成真实 TTS voice。不要在显示名中加入「原创角色」等说明。
 
 每段必须有 `id`（字母数字下划线短横线）、`speaker`、`en`、`zh`、`stage`（在场角色数组）、`act`（简短章节提示）。`tone` 可取 curious、playful、skeptical、quiet、gentle、warm、mysterious。可选 `vocab: {term,ipa,meaning,note}`；term 必须实际出现于英文对白。`sfx: lyre` 会生成三个很轻的合成拨弦音，同时令 lantern 道具开始上升；其他 IP 不要无意义地套用。
 
@@ -27,6 +28,6 @@
 
 时间轴程序增加：`audio`、`words`、`speech_duration`、`start`、`audio_start`、`end`。`words` 来自真实 WordBoundary，单位秒，局部相对音频起点。渲染器以 `audio_start+word.start` 高亮。顶层 `duration` 包括片头和片尾。
 
-对话样式和文本容量见 [青玉宣纸界面](dialogue-ui.md)。`vocab` 在对话卷轴右侧显示，完整词组在正文中加金色下划线；没有 `vocab` 时对白使用全部正文宽度。字符数上限不保证文字一定放得下，最终以字体实际测量为准，溢出会在编码前报错。
+对话样式和文本容量见 [多风格界面规范](dialogue-ui.md)。`vocab` 在底部界面右侧显示，完整词组在正文中加主题色下划线；没有 `vocab` 时对白扩展到右侧。字符数上限不保证文字一定放得下，最终以字体实际测量为准。改变 `ui_theme` 后重新运行构建，更新时间轴中的主题字段；无需重新生成未改变的配音。
 
 限制：16:9，固定两名角色左右站位；不支持视频素材立绘、精确口型、多个背景自动切换或多结局。要扩展时先扩展数据契约、渲染器与验证，不要向 JSON 填无效字段后声称生效。

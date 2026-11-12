@@ -8,10 +8,12 @@ def probe(path):
 
 def validate(data, root):
     from PIL import Image
+    from themes import resolve_theme
     errors=[]
     for key in ['version','ip','title','title_zh','level','characters','lines','background']:
         if key not in data: errors.append(f'Missing {key}')
     if errors: raise ValueError('; '.join(errors))
+    resolve_theme(data)
     chars=data['characters']; ids=set()
     if data['version']!=1:errors.append('Unsupported episode version')
     if len(data.get('ending_title',''))>48:errors.append('Ending title too long (48 characters max)')
@@ -30,6 +32,9 @@ def validate(data, root):
     Image.open(asset(data['background'])).verify()
     for who,c in chars.items():
         if 'sprite' in c:
+            height=c.get('sprite_height',612)
+            if isinstance(height,bool) or not isinstance(height,(int,float)) or not 300<=height<=640:
+                errors.append(f'{who}: sprite_height must be between 300 and 640')
             if c.get('side') not in ['left','right']:errors.append(f'{who}: invalid stage side')
             im=Image.open(asset(c['sprite']))
             if im.mode!='RGBA' or im.getextrema()[3][0]!=0:

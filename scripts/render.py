@@ -5,7 +5,7 @@ from pathlib import Path
 import numpy as np
 from PIL import Image, ImageDraw, ImageFont, ImageEnhance, ImageOps
 from delivery import publish_video,require_video_output
-from jade_paper import JadePaperUI
+from themes import THEMES,resolve_theme
 
 ROOT=Path(__file__).resolve().parents[1]
 GOLD='#ecd09a';JADE='#8ce0c6';WHITE='#f5f3eb';MUTED='#aebfc1'
@@ -20,17 +20,18 @@ def font_path(kind):
 class Renderer:
     def __init__(self,data,folder,width=1920):
         self.data=data;self.folder=folder;self.scale=width/1280;self.size=(width,round(width*9/16));self.fonts={}
+        self.theme=resolve_theme(data)
         self.paths={k:font_path(k) for k in ['en','bold','serif','zh','zh_serif']}
         self.bg=ImageOps.fit(Image.open(folder/data['background']).convert('RGB'),self.size,method=Image.Resampling.LANCZOS)
         self.bg=ImageEnhance.Brightness(self.bg).enhance(.7).convert('RGBA')
         self.sprites={}
         for who,c in data['characters'].items():
             if 'sprite' in c:
-                im=Image.open(folder/c['sprite']).convert('RGBA');height=round(612*self.scale)
+                im=Image.open(folder/c['sprite']).convert('RGBA');height=round(c.get('sprite_height',612)*self.scale)
                 im=im.resize((round(im.width*height/im.height),height),Image.Resampling.LANCZOS)
                 self.sprites[who]=(im,ImageEnhance.Brightness(im).enhance(.66))
         self.starts=[l['start'] for l in data['lines']]
-        self.ui=JadePaperUI(self)
+        self.ui=THEMES[self.theme](self)
         self.layouts={key:value['words'] for key,value in self.ui.layouts.items()}
     def f(self,size,kind='en'):
         key=(size,kind)
@@ -76,7 +77,7 @@ class Renderer:
         im=self.bg.copy();s=self.scale;i,l=self.cue(t)
         # Slow drifting motes keep the environment alive without moving the subtitles.
         d=ImageDraw.Draw(im)
-        for n in range(18):
+        for n in range(0 if self.theme=='mystery' else 18):
             x=(n*157+t*(7+n%3))%1280;y=70+(n*83)%390+math.sin(t*.6+n)*10
             d.ellipse((round(x*s),round(y*s),round((x+2)*s),round((y+2)*s)),fill=(180,228,211,140))
         if t<5:return self.title(im,t)
@@ -92,13 +93,14 @@ class Renderer:
             a=ease if entering else 1-ease if leaving else 1
             offset=(1-a)*440*(-1 if side=='left' else 1)
             x=(62 if side=='left' else 808)+offset
-            y=66+math.sin(t*1.8+(0 if side=='left' else 2))*2
+            y=678-c.get('sprite_height',612)+math.sin(t*1.8+(0 if side=='left' else 2))*2
             im.alpha_composite(sprite,(round(x*s),round(y*s)))
         self.lantern(im,t,l)
         self.ui.draw(im,l,i,t,zh)
         if l.get('type')=='choice':self.ui.choice(ImageDraw.Draw(im),l,t)
         return im.convert('RGB')
     def title(self,im,t):
+        if hasattr(self.ui,'title'):return self.ui.title(im,t)
         layer=Image.new('RGBA',self.size,(5,19,31,95));d=ImageDraw.Draw(layer)
         self.txt(d,(76,70),self.data.get('brand','WIND / WORDS'),22,GOLD,'bold')
         self.txt(d,(80,184),self.data['ip'].split('/')[0].strip().upper()+'  /  FAN STORY 01',14,JADE,'bold')
@@ -109,6 +111,7 @@ class Renderer:
         self.txt(d,(80,662),self.data.get('disclosure',''),11,MUTED)
         im.alpha_composite(layer);return im.convert('RGB')
     def outro(self,im,t):
+        if hasattr(self.ui,'outro'):return self.ui.outro(im,t)
         layer=Image.new('RGBA',self.size,(4,19,30,180));d=ImageDraw.Draw(layer)
         self.txt(d,(88,75),'QUEST COMPLETE',16,JADE,'bold')
         self.txt(d,(84,118),self.data.get('ending_title','Every story leaves a little light.'),43,WHITE,'serif')

@@ -98,32 +98,35 @@ class DialogueUITests(unittest.TestCase):
         cue.pop('vocab', None)
         cue['words'] = [{'text': token, 'start': n*.1, 'end': (n+1)*.1}
                         for n, token in enumerate(cue['en'].split())]
-        for width in (640, 1280, 1920):
-            r = Renderer(d, self.folder, width)
-            layout = r.ui.layouts[cue['id']]
-            font = r.f(layout['size'], 'serif')
-            reference = Image.new('RGB', r.size, 'white')
-            draw = ImageDraw.Draw(reference)
-            for y in sorted({word[2] for word in layout['words']}):
-                row = [word for word in layout['words'] if word[2] == y]
-                baseline = round(y*r.scale) - font.getbbox('H', anchor='ls')[1]
-                draw.text((round(row[0][1]*r.scale), baseline),
-                          ' '.join(word[0] for word in row), font=font, fill='black', anchor='ls')
+        for theme in ('jade-paper', 'mystery'):
+            d['ui_theme'] = theme
+            for width in (640, 1280, 1920):
+                r = Renderer(d, self.folder, width)
+                layout = r.ui.layouts[cue['id']]
+                font = r.f(layout['size'], r.ui.FONT_KIND)
+                reference = Image.new('RGB', r.size, 'black' if theme == 'mystery' else 'white')
+                draw = ImageDraw.Draw(reference)
+                for y in sorted({word[2] for word in layout['words']}):
+                    row = [word for word in layout['words'] if word[2] == y]
+                    baseline = round(y*r.scale) - font.getbbox('H', anchor='ls')[1]
+                    draw.text((round(row[0][1]*r.scale), baseline),
+                              ' '.join(word[0] for word in row), font=font, fill='white' if theme == 'mystery' else 'black', anchor='ls')
 
-            def ink_rows(image, box):
-                pixels = np.asarray(image.crop(box))
-                # Both text colors are dark; paper, brush wash and gold are light.
-                occupied = np.flatnonzero((pixels.max(axis=2) < 100).any(axis=1))
-                self.assertGreater(len(occupied), 0)
-                return (occupied[0], occupied[-1])
+                def ink_rows(image, box):
+                    pixels = np.asarray(image.crop(box))
+                    # Isolate bright ink on charcoal or dark ink on paper.
+                    ink = pixels.min(axis=2) > 150 if theme == 'mystery' else pixels.max(axis=2) < 100
+                    occupied = np.flatnonzero(ink.any(axis=1))
+                    self.assertGreater(len(occupied), 0)
+                    return (occupied[0], occupied[-1])
 
-            for offset in [-.05] + [word['start']+.05 for word in cue['words']] + [1.2]:
-                frame = r.frame(cue['audio_start']+offset)
-                for token, x, y, w in layout['words']:
-                    box = (round((x-2)*r.scale), round((y-4)*r.scale),
-                           round((x+w+2)*r.scale), round((y+layout['size']+5)*r.scale))
-                    with self.subTest(width=width, time=offset, token=token):
-                        self.assertEqual(ink_rows(frame, box), ink_rows(reference, box))
+                for offset in [-.05] + [word['start']+.05 for word in cue['words']] + [1.2]:
+                    frame = r.frame(cue['audio_start']+offset)
+                    for token, x, y, w in layout['words']:
+                        box = (round((x-2)*r.scale), round((y-4)*r.scale),
+                               round((x+w+2)*r.scale), round((y+layout['size']+5)*r.scale))
+                        with self.subTest(theme=theme, width=width, time=offset, token=token):
+                            self.assertEqual(ink_rows(frame, box), ink_rows(reference, box))
 
 
 if __name__ == '__main__':
