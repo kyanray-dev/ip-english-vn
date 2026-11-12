@@ -5,6 +5,7 @@ from pathlib import Path
 import numpy as np
 from prepare import validate
 from render import Renderer
+from delivery import require_video_output
 
 def norm(text):return re.sub('[^a-z0-9]','',text.lower())
 def check(timeline,out):
@@ -33,11 +34,11 @@ def check(timeline,out):
     if vs['codec_name']!='h264' or vs['pix_fmt']!='yuv420p':errors.append('Video must be broadly compatible H.264/yuv420p')
     if len([s for s in streams if s['codec_type']=='subtitle'])!=2:errors.append('Missing bilingual subtitle tracks')
     checks.append({'name':'media','resolution':f'{vs["width"]}x{vs["height"]}','duration':float(info['format']['duration']),'voices':len({c['voice'] for c in data['characters'].values()}),'vocabulary_cards':vocab})
-    required=['index.html','poster.jpg','subtitles.en.srt','subtitles.zh.srt','novel-english.txt','novel-bilingual.txt','vocabulary.json']
-    for f in required:
-        if not (out/f).exists() or not (out/f).stat().st_size:errors.append('Missing '+f)
+    try:require_video_output(out,complete=True)
+    except ValueError as e:errors.append(str(e))
+    checks.append({'name':'video_only_delivery','files':sorted(p.name for p in out.iterdir())})
     result={'passed':not errors,'checks':checks,'errors':errors,'timing_source':data['timing_source'],'scope':'Automated media/schema/timing/layout checks. Does not establish subjective acting quality or canon accuracy.'}
-    (out/'qa-report.json').write_text(json.dumps(result,ensure_ascii=False,indent=2));print(json.dumps(result,ensure_ascii=False,indent=2))
+    print(json.dumps(result,ensure_ascii=False,indent=2))
     return not errors
 if __name__=='__main__':
     p=argparse.ArgumentParser();p.add_argument('timeline',type=Path);p.add_argument('--out',type=Path,required=True);a=p.parse_args();sys.exit(0 if check(a.timeline.resolve(),a.out.resolve()) else 1)

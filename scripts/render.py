@@ -1,9 +1,10 @@
 #!/usr/bin/env python3
 """Deterministic visual-novel compositor. Layout units are 1280 x 720."""
-import argparse, bisect, functools, json, math, re, subprocess, time
+import argparse, bisect, json, math, re, subprocess, tempfile, time
 from pathlib import Path
 import numpy as np
 from PIL import Image, ImageDraw, ImageFont, ImageEnhance, ImageOps
+from delivery import publish_video,require_video_output
 
 ROOT=Path(__file__).resolve().parents[1]
 GOLD='#ecd09a';JADE='#8ce0c6';WHITE='#f5f3eb';MUTED='#aebfc1'
@@ -112,7 +113,7 @@ class Renderer:
         self.lantern(im,t,l)
         overlay=Image.new('RGBA',self.size);d=ImageDraw.Draw(overlay)
         self.rect(d,(24,18,1256,65),(7,21,32,225),14,outline=(167,207,199,60))
-        self.txt(d,(42,29),'WIND / WORDS',18,GOLD,'bold')
+        self.txt(d,(42,29),self.data.get('brand','WIND / WORDS'),18,GOLD,'bold')
         self.txt(d,(284,32),l.get('act','STORY'),14,MUTED)
         self.txt(d,(1100,29),self.data['level']+'  /  EN',17,JADE,'bold')
         # Vocabulary floats in the open space between the characters.
@@ -170,7 +171,7 @@ class Renderer:
         self.txt(d,(398,451),f'{remaining:02d} s   /   '+('CLUE FOUND' if remaining==0 else 'THINK IN ENGLISH'),11,GOLD,'bold')
     def title(self,im,t):
         layer=Image.new('RGBA',self.size,(5,19,31,95));d=ImageDraw.Draw(layer)
-        self.txt(d,(76,70),'WIND / WORDS',22,GOLD,'bold')
+        self.txt(d,(76,70),self.data.get('brand','WIND / WORDS'),22,GOLD,'bold')
         self.txt(d,(80,184),self.data['ip'].split('/')[0].strip().upper()+'  /  FAN STORY 01',14,JADE,'bold')
         y=self.text_block(d,self.data['title'],76,230,1050,58,'serif',WHITE,1.15)
         self.txt(d,(80,y+21),self.data['title_zh'],31,GOLD,'zh')
@@ -190,7 +191,7 @@ class Renderer:
             term=line['vocab']['term'];meaning=line['vocab']['meaning'];sentence=line['en']
             y=262+n*105;self.rect(d,(84,y,1196,y+86),(16,41,51,242),13,outline='#395c61')
             self.txt(d,(107,y+17),term,25,JADE,'bold');self.txt(d,(500,y+22),meaning,21,GOLD,'zh');self.txt(d,(108,y+54),sentence,15,MUTED)
-        self.txt(d,(88,624),'REPLAY WITHOUT CHINESE SUBTITLES. WHAT DO YOU HEAR NOW?',14,GOLD,'bold')
+        self.txt(d,(88,624),'REPLAY THE STORY. CAN YOU USE THESE EXPRESSIONS?',14,GOLD,'bold')
         self.txt(d,(88,669),self.data.get('disclosure',''),11,MUTED)
         im.alpha_composite(layer);return im.convert('RGB')
 
@@ -216,47 +217,36 @@ def make_audio(data,folder,out):
 def stamp(t):
     ms=round(t*1000);return f'{ms//3600000:02d}:{ms//60000%60:02d}:{ms//1000%60:02d},{ms%1000:03d}'
 
-def export_text(data,out):
-    def prose_line(line):
-        if line['speaker']=='narrator':return line['en']
-        name=data['characters'][line['speaker']]['name'].title()
-        text=line['en'];question=text.endswith('?')
-        verb='asked' if question else 'said'
-        tone=line.get('tone')
-        extra={'quiet':' quietly','gentle':' softly','playful':' with a small smile','skeptical':', unconvinced'}.get(tone,'')
-        if text.endswith('.'):text=text[:-1]+','
-        return f'“{text}” {name} {verb}{extra}.'
+def export_subtitles(data,work):
+    """Temporary muxing inputs, never standalone deliverables."""
     for lang in ['en','zh']:
         text='\n\n'.join(f'{i+1}\n{stamp(l["audio_start"])} --> {stamp(l["audio_start"]+l["speech_duration"])}\n{l[lang]}' for i,l in enumerate(data['lines']))
-        (out/f'subtitles.{lang}.srt').write_text(text+'\n')
-    prose=[data['title'],data['title_zh'],'Original Genshin Impact fan story | B1 English','']
-    for l in data['lines']:
-        if l.get('type')=='choice':continue
-        prose.append(prose_line(l))
-        prose.append(l['zh']);prose.append('')
-    (out/'novel-bilingual.txt').write_text('\n'.join(prose))
-    (out/'novel-english.txt').write_text(data['title']+'\n\n'+'\n\n'.join(prose_line(l) for l in data['lines'] if l.get('type')!='choice'))
-    vocab=[l['vocab'] for l in data['lines'] if l.get('vocab')];(out/'vocabulary.json').write_text(json.dumps(vocab,ensure_ascii=False,indent=2))
+        (work/f'subtitles.{lang}.srt').write_text(text+'\n')
 
-def main():
-    p=argparse.ArgumentParser();p.add_argument('timeline',type=Path);p.add_argument('--out',type=Path,required=True);p.add_argument('--width',type=int,default=1920);p.add_argument('--fps',type=int,default=24);p.add_argument('--frame',type=float);p.add_argument('--no-chinese',action='store_true');args=p.parse_args()
-    path=args.timeline.resolve();data=json.loads(path.read_text());out=args.out.resolve();out.mkdir(parents=True,exist_ok=True)
-    r=Renderer(data,path.parent,args.width)
-    if args.frame is not None:r.frame(args.frame,not args.no_chinese).save(out/'preview.png');return
-    export_text(data,out);make_audio(data,path.parent,out/'mix.wav')
-    r.frame(12).save(out/'poster.jpg',quality=94)
-    total=math.ceil(data['duration']*args.fps);start=time.time();dest=out/'episode.mp4';temp=out/'episode.part.mp4'
-    command=['ffmpeg','-y','-v','warning','-f','rawvideo','-pix_fmt','rgb24','-s',f'{r.size[0]}x{r.size[1]}','-r',str(args.fps),'-i','-','-i',str(out/'mix.wav'),'-i',str(out/'subtitles.zh.srt'),'-i',str(out/'subtitles.en.srt'),'-map','0:v','-map','1:a','-map','2:s','-map','3:s','-c:v','libx264','-preset','veryfast','-crf','19','-pix_fmt','yuv420p','-c:a','aac','-b:a','192k','-c:s','mov_text','-metadata:s:s:0','language=zho','-metadata:s:s:1','language=eng','-disposition:s:0','0','-disposition:s:1','0','-movflags','+faststart','-t',str(data['duration']),str(temp)]
+def encode_video(data,folder,work,renderer,fps,chinese):
+    export_subtitles(data,work);make_audio(data,folder,work/'mix.wav')
+    total=math.ceil(data['duration']*fps);start=time.time();temp=work/'episode.mp4'
+    command=['ffmpeg','-y','-v','warning','-f','rawvideo','-pix_fmt','rgb24','-s',f'{renderer.size[0]}x{renderer.size[1]}','-r',str(fps),'-i','-','-i',str(work/'mix.wav'),'-i',str(work/'subtitles.zh.srt'),'-i',str(work/'subtitles.en.srt'),'-map','0:v','-map','1:a','-map','2:s','-map','3:s','-c:v','libx264','-preset','veryfast','-crf','19','-pix_fmt','yuv420p','-c:a','aac','-b:a','192k','-c:s','mov_text','-metadata:s:s:0','language=zho','-metadata:s:s:1','language=eng','-disposition:s:0','0','-disposition:s:1','0','-movflags','+faststart','-t',str(data['duration']),str(temp)]
     process=subprocess.Popen(command,stdin=subprocess.PIPE)
     try:
         for n in range(total):
-            process.stdin.write(r.frame(n/args.fps,not args.no_chinese).tobytes())
+            process.stdin.write(renderer.frame(n/fps,chinese).tobytes())
             if n%240==0:print(f'RENDER {n}/{total} frames / {time.time()-start:.0f}s elapsed',flush=True)
         process.stdin.close()
         if process.wait()!=0:raise RuntimeError('FFmpeg failed')
-        temp.replace(dest)
     except BaseException:
         process.kill();process.wait();raise
-    print('DONE',dest,flush=True)
+    return temp
+
+def main():
+    p=argparse.ArgumentParser();p.add_argument('timeline',type=Path);p.add_argument('--out',type=Path,required=True);p.add_argument('--width',type=int,default=1920);p.add_argument('--fps',type=int,default=24);p.add_argument('--no-chinese',action='store_true');args=p.parse_args()
+    if args.width<320 or args.width%2 or round(args.width*9/16)%2:p.error('Width and 16:9 height must be positive even values')
+    if not 1<=args.fps<=120:p.error('FPS must be between 1 and 120')
+    path=args.timeline.resolve();data=json.loads(path.read_text());out=args.out.resolve();require_video_output(out)
+    r=Renderer(data,path.parent,args.width)
+    with tempfile.TemporaryDirectory(prefix='ip-english-vn-render-') as tmp:
+        source=encode_video(data,path.parent,Path(tmp),r,args.fps,not args.no_chinese)
+        video=publish_video(source,out)
+    print('DONE',video,flush=True)
 
 if __name__=='__main__':main()

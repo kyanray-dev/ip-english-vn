@@ -9,6 +9,7 @@
 | version | 固定为 1 |
 | ip, title, title_zh | IP 名称、英文标题、中文标题 |
 | level | 默认 B1 |
+| brand | 可选栏目显示名，建议不超过 16 个英文字符；默认 WIND / WORDS |
 | background | 相对 episode 目录的背景路径 |
 | disclosure | 简短的原创同人、AI 配音/插画说明 |
 | ending_title | 最长约 42 英文字符，片尾标题 |

@@ -34,11 +34,4 @@ class EpisodeContractTests(unittest.TestCase):
         # Reuse artwork only to test that rendering does not require sample-specific metadata.
         r=Renderer(d,self.folder,1280)
         for t in [0,17,62,d['outro_start']+1]:self.assertEqual(r.frame(t).size,(1280,720))
-    def test_payload_cannot_close_script_element(self):
-        import subprocess
-        with tempfile.TemporaryDirectory() as td:
-            path=Path(td);d={'title':'</script><script>alert(1)</script>'};(path/'timeline.json').write_text(json.dumps(d))
-            subprocess.run([sys.executable,str(ROOT/'scripts/package_player.py'),str(path/'timeline.json'),'--out',str(path/'out')],check=True,capture_output=True)
-            html=(path/'out/index.html').read_text();self.assertNotIn('"title": "</script>',html)
-
 if __name__=='__main__':unittest.main()
