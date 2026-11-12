@@ -1,25 +1,26 @@
 #!/usr/bin/env python3
 """Deterministic visual-novel compositor. Layout units are 1280 x 720."""
-import argparse, bisect, json, math, re, subprocess, tempfile, time
+import argparse, bisect, json, math, subprocess, tempfile, time
 from pathlib import Path
 import numpy as np
 from PIL import Image, ImageDraw, ImageFont, ImageEnhance, ImageOps
 from delivery import publish_video,require_video_output
+from jade_paper import JadePaperUI
 
 ROOT=Path(__file__).resolve().parents[1]
 GOLD='#ecd09a';JADE='#8ce0c6';WHITE='#f5f3eb';MUTED='#aebfc1'
 
 def font_path(kind):
     bundled=ROOT/'fonts'
-    names={'en':'sans.ttf','bold':'bold.ttf','serif':'serif.ttf','zh':'cjk.ttc'}
+    names={'en':'sans.ttf','bold':'bold.ttf','serif':'serif.ttf','zh':'cjk.ttc','zh_serif':'cjk-serif.ttc'}
     if (bundled/names[kind]).exists():return str(bundled/names[kind])
-    families={'en':'DejaVu Sans','bold':'DejaVu Sans:style=Bold','serif':'DejaVu Serif','zh':'Noto Sans CJK SC'}
+    families={'en':'DejaVu Sans','bold':'DejaVu Sans:style=Bold','serif':'DejaVu Serif','zh':'Noto Sans CJK SC','zh_serif':'Noto Serif CJK SC'}
     return subprocess.check_output(['fc-match','-f','%{file}',families[kind]],text=True).strip()
 
 class Renderer:
     def __init__(self,data,folder,width=1920):
         self.data=data;self.folder=folder;self.scale=width/1280;self.size=(width,round(width*9/16));self.fonts={}
-        self.paths={k:font_path(k) for k in ['en','bold','serif','zh']}
+        self.paths={k:font_path(k) for k in ['en','bold','serif','zh','zh_serif']}
         self.bg=ImageOps.fit(Image.open(folder/data['background']).convert('RGB'),self.size,method=Image.Resampling.LANCZOS)
         self.bg=ImageEnhance.Brightness(self.bg).enhance(.7).convert('RGBA')
         self.sprites={}
@@ -29,24 +30,14 @@ class Renderer:
                 im=im.resize((round(im.width*height/im.height),height),Image.Resampling.LANCZOS)
                 self.sprites[who]=(im,ImageEnhance.Brightness(im).enhance(.66))
         self.starts=[l['start'] for l in data['lines']]
-        self.layouts={l['id']:self.word_layout(l) for l in data['lines']}
-        self.overflow=[]
-        for l in data['lines']:
-            if max((p[2] for p in self.layouts[l['id']]),default=0)>613: self.overflow.append(l['id'])
-            if any(x+w>1210 for _,x,_,w in self.layouts[l['id']]):self.overflow.append(l['id']+': long token')
-            if self.measure(l['zh'],19,'zh')>1150:self.overflow.append(l['id']+': Chinese caption')
-            if self.measure(l.get('act',''),14)>780:self.overflow.append(l['id']+': act label')
-            if l.get('vocab'):
-                v=l['vocab']
-                if self.measure(v['term'],25,'bold')>350:self.overflow.append(l['id']+': vocabulary term')
-                if self.measure(v['meaning'],20,'zh')>350:self.overflow.append(l['id']+': vocabulary meaning')
-                if len(self.wrap(v.get('note',''),350,13,'zh'))>2:self.overflow.append(l['id']+': vocabulary note')
-            for o in l.get('options',[]):
-                if self.measure(o['en'],19)>442:self.overflow.append(l['id']+': choice option')
-        if self.overflow:raise ValueError('Dialogue overflow: '+','.join(self.overflow))
+        self.ui=JadePaperUI(self)
+        self.layouts={key:value['words'] for key,value in self.ui.layouts.items()}
     def f(self,size,kind='en'):
         key=(size,kind)
-        if key not in self.fonts:self.fonts[key]=ImageFont.truetype(self.paths[kind],round(size*self.scale))
+        if key not in self.fonts:
+            # The bundled Noto CJK collections put the Simplified Chinese face at index 2.
+            index=2 if kind.startswith('zh') and Path(self.paths[kind]).name in ('cjk.ttc','cjk-serif.ttc') else 0
+            self.fonts[key]=ImageFont.truetype(self.paths[kind],round(size*self.scale),index=index)
         return self.fonts[key]
     def txt(self,d,xy,text,size=20,fill=WHITE,kind='en',**kw):
         d.text(tuple(round(x*self.scale) for x in xy),text,font=self.f(size,kind),fill=fill,**kw)
@@ -54,19 +45,12 @@ class Renderer:
         d.rounded_rectangle(tuple(round(x*self.scale) for x in box),round(radius*self.scale),fill=fill,outline=outline,width=max(1,round(width*self.scale)))
     def measure(self,text,size=20,kind='en'):return self.f(size,kind).getlength(text)/self.scale
     def wrap(self,text,width,size,kind='en'):
-        chunks=text.split(' ') if kind!='zh' else list(text);sep=' ' if kind!='zh' else '';out=[];line=''
+        chunks=list(text) if kind.startswith('zh') else text.split();sep='' if kind.startswith('zh') else ' ';out=[];line=''
         for token in chunks:
             test=line+sep+token if line else token
             if self.measure(test,size,kind)>width and line:out.append(line);line=token
             else:line=test
         if line:out.append(line)
-        return out
-    def word_layout(self,l):
-        x=64;y=554;out=[]
-        for token in l['en'].split():
-            w=self.measure(token,28)
-            if x+w>1210:x=64;y+=39
-            out.append((token,x,y,w));x+=w+self.measure(' ',28)
         return out
     def cue(self,t):
         i=bisect.bisect_right(self.starts,t)-1
@@ -111,64 +95,9 @@ class Renderer:
             y=66+math.sin(t*1.8+(0 if side=='left' else 2))*2
             im.alpha_composite(sprite,(round(x*s),round(y*s)))
         self.lantern(im,t,l)
-        overlay=Image.new('RGBA',self.size);d=ImageDraw.Draw(overlay)
-        self.rect(d,(24,18,1256,65),(7,21,32,225),14,outline=(167,207,199,60))
-        self.txt(d,(42,29),self.data.get('brand','WIND / WORDS'),18,GOLD,'bold')
-        self.txt(d,(284,32),l.get('act','STORY'),14,MUTED)
-        self.txt(d,(1100,29),self.data['level']+'  /  EN',17,JADE,'bold')
-        # Vocabulary floats in the open space between the characters.
-        v=l.get('vocab')
-        if v and l.get('type')!='choice':
-            self.rect(d,(441,299,839,473),(8,26,37,237),18,outline=(140,224,198,110))
-            self.txt(d,(465,317),'WORD DISCOVERED',11,JADE,'bold')
-            self.txt(d,(465,339),v['term'],25,GOLD,'bold')
-            self.txt(d,(465,374),v.get('ipa',''),14,MUTED)
-            self.txt(d,(465,400),v['meaning'],20,WHITE,'zh')
-            self.text_block(d,v.get('note',''),465,437,350,13,'zh',MUTED)
-        if l.get('type')=='choice':self.choice(d,l,t)
-        self.rect(d,(28,509,1252,686),(8,22,33,247),18,outline=(205,185,132,150))
-        c=self.data['characters'][l['speaker']]
-        self.rect(d,(51,495,248,536),(19,48,54,255),9,outline=c['color'])
-        self.txt(d,(67,504),c['name'],18,c['color'],'bold')
-        self.txt(d,(269,518),c['zh'],13,MUTED,'zh')
-        self.txt(d,(1113,518),f'{i+1:02d} / {len(self.data["lines"]):02d}',13,MUTED)
-        spoken=t-l['audio_start'];words=l['words']
-        # Map real word boundaries by matching normalized text spans, including contractions.
-        current_word=None
-        for word in words:
-            if word['start']<=spoken<word['end']+.04:current_word=word;break
-        target=re.sub(r'[^a-z0-9]','',current_word['text'].lower()) if current_word else ''
-        hit=None
-        if target:
-            index=words.index(current_word);before=''.join(re.sub(r'[^a-z0-9]','',w['text'].lower()) for w in words[:index]);char_start=len(before)
-            count=0
-            for k,(token,x,y,w) in enumerate(self.layouts[l['id']]):
-                n=len(re.sub(r'[^a-z0-9]','',token.lower()))
-                if count<=char_start<count+n:hit=k;break
-                count+=n
-        term=v['term'].lower().split() if v else []
-        for k,(token,x,y,w) in enumerate(self.layouts[l['id']]):
-            if k==hit:self.rect(d,(x-4,y-1,x+w+5,y+36),(67,109,101,255),6)
-            fill=JADE if k==hit else WHITE
-            self.txt(d,(x,y),token,28,fill)
-            if re.sub(r'[^a-z]','',token.lower()) in term:
-                d.line([(round(x*s),round((y+35)*s)),(round((x+w)*s),round((y+35)*s))],fill=GOLD,width=round(1.5*s))
-        if zh:self.txt(d,(64,643),l['zh'],19,MUTED,'zh')
-        fraction=t/self.data['duration'];self.rect(d,(28,703,1252,706),(66,84,87,255),1);self.rect(d,(28,703,28+1224*fraction,706),JADE,1)
-        im.alpha_composite(overlay)
+        self.ui.draw(im,l,i,t,zh)
+        if l.get('type')=='choice':self.ui.choice(ImageDraw.Draw(im),l,t)
         return im.convert('RGB')
-    def choice(self,d,l,t):
-        self.rect(d,(369,159,911,477),(7,24,36,245),20,outline=(140,224,198,175))
-        self.txt(d,(395,182),'YOUR TURN',14,JADE,'bold')
-        self.txt(d,(395,210),'Read the clue. Make a choice.',22,WHITE,'bold')
-        self.txt(d,(395,245),'暂停想一想，再继续剧情',16,MUTED,'zh')
-        for n,o in enumerate(l['options']):
-            y=286+n*76;selected=t>l['end']-1.5 and n==l['answer']
-            self.rect(d,(393,y,887,y+62),(33,73,70,255) if selected else (23,43,55,255),10,outline=JADE if selected else '#527078')
-            self.txt(d,(410,y+9),f'{"AB"[n]}  '+o['en'],19,JADE if selected else WHITE)
-            self.txt(d,(440,y+36),o['zh'],14,MUTED,'zh')
-        remaining=max(0,math.ceil(l['end']-t-1.5))
-        self.txt(d,(398,451),f'{remaining:02d} s   /   '+('CLUE FOUND' if remaining==0 else 'THINK IN ENGLISH'),11,GOLD,'bold')
     def title(self,im,t):
         layer=Image.new('RGBA',self.size,(5,19,31,95));d=ImageDraw.Draw(layer)
         self.txt(d,(76,70),self.data.get('brand','WIND / WORDS'),22,GOLD,'bold')
