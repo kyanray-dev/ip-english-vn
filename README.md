@@ -12,7 +12,7 @@ gh repo clone kyanray-dev/ip-english-vn .agents/skills/ip-english-vn
 
 在支持项目 skills、执行代码和生图的 AI 宿主中调用：
 
-> 使用 ip-english-vn，IP：原神。
+> 使用 ip-english-vn，IP：XX。
 
 默认 B1、约 2 分钟、两名角色＋旁白、1080p。AI 负责规划剧情并整理内部数据；代码负责调用 TTS、对齐、逐帧合成、混音和编码。脚本、SDK 或命令行不能调用文生视频、图生视频、一键成片等服务。
 
